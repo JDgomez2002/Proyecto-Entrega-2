@@ -6,13 +6,13 @@
 //Actividad: Proyecto Entrega 2
 //Grupo 8
 //José Daniel Gómez Cabrera 21429
-//Linda
+//Linda Inés Jiménez Vides
 //Mario
 //Estuadro
 
 public class MAIN {
     
     public static void main(String[] args){
-        
+
     }
 }
