@@ -7,7 +7,7 @@
 //Grupo 8
 //José Daniel Gómez Cabrera 21429
 //Linda
-//Mario Antonio Guerra Morales 21008
+//Mario
 //Estuadro
 
 public class Biblioteca {
