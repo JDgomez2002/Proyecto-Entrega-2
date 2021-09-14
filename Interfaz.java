@@ -6,9 +6,9 @@
 //Actividad: Proyecto Entrega 2
 //Grupo 8
 //José Daniel Gómez Cabrera 21429
-//Linda
+//Linda Inés Jiménez Vides 21169
 //Mario
-//Estuadro
+//Estuardo José Francisco Ayala Argueta 21315
 
 public class Interfaz{
     
