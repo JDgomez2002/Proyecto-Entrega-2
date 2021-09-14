@@ -6,7 +6,7 @@
 //Actividad: Proyecto Entrega 2
 //Grupo 8
 //José Daniel Gómez Cabrera 21429
-//Linda Inés Jiménez Vides
+//Linda Inés Jiménez Vides 21169
 //Mario
 //Estuadro
 
