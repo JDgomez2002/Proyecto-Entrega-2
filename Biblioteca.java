@@ -7,7 +7,7 @@
 //Grupo 8
 //José Daniel Gómez Cabrera 21429
 //Linda Inés Jiménez Vides 21169
-//Mario
+//Mario Antonio Guerra Morales 21008
 //Estuadro
 
 public class Biblioteca {

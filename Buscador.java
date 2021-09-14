@@ -7,7 +7,7 @@
 //Grupo 8
 //José Daniel Gómez Cabrera 21429
 //Linda Inés Jiménez Vides 21169
-//Mario
+//Mario Antoniio Guerra Morales 21008
 //Estuardo José Francisco Ayala Argueta 21315
 
 public class Buscador {
