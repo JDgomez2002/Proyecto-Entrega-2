@@ -11,5 +11,26 @@
 //Estuardo José Francisco Ayala Argueta 21315
 
 public class Leccion {
-    
+    private String titulo;
+    private String texto;
+    private String autor;
+    private String referencias;
+    private String fichabibliografica;
+    private int frecuencia_visita;
+
+    public void Leccion(){
+
+    }
+
+    public void setFrecuenciavisitas(){
+
+    }
+
+    public String getleccion(){
+        return titulo;
+    }
+
+    public int getfrecuencia(){
+        return 0;
+    }
 }
