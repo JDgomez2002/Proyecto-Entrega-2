@@ -8,8 +8,10 @@
 //José Daniel Gómez Cabrera 21429
 //Linda Inés Jiménez Vides 21169
 //Mario Antonio Guerra Morales 21008
-//Estuadro
+//Estuardo José Francisco Ayala Argueta 21315 
+
+import java.util.ArrayList;
 
 public class Biblioteca {
-    
+    private ArrayList<Leccion> Leccion;
 }
