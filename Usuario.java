@@ -10,6 +10,13 @@
 //Mario Antonio Guerra Morales 21008
 //Estuardo José Francisco Ayala Argueta 21315
 
+import java.util.ArrayList;
+
 public class Usuario {
-    
+    private String nombre;
+    private String edad;
+    private String genero;
+    private String nivel_educativo;
+    private String ocupacion;
+    private ArrayList<String> historial;
 }
