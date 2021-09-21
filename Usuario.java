@@ -11,7 +11,12 @@
 //Estuardo José Francisco Ayala Argueta 21315
 
 import java.util.ArrayList;
-
+ /**
+  * Clase de Usuario con las variables necesarias
+  *
+  *@author Grupo 8
+  *@version Class Usuario 1.1
+  */
 public class Usuario {
     private String nombre;
     private String edad;

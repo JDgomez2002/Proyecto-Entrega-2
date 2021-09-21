@@ -48,7 +48,13 @@ public class Biblioteca{
             throw new RuntimeException(s);
         }
     }
-
+    /**
+     * Getter de las lecciones
+     * 
+     * @author Grupo 8
+     * @version get_lecciones 1.1
+     * @return Lecciones String
+     */
     public ArrayList<Leccion> get_lecciones(){
         return this.Lecciones;
     }

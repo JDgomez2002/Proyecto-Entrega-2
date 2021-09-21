@@ -10,6 +10,12 @@
 //Mario Antonio Guerra Morales 21008
 //Estuardo José Francisco Ayala Argueta 21315
 
+/**
+ * Clase de Buscador 
+ * 
+ * @author Grupo 8
+ * @version Class Buscador 0
+ */
 public class Buscador {
     
 }
