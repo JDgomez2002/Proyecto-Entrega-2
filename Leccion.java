@@ -13,26 +13,32 @@
 import java.util.ArrayList;
 
 public class Leccion {
+    private int indice;
     private String titulo;
     private String texto;
     private String cita;
     private int frecuencia_visita;
 
-    public void Leccion(String titulo, String texto, String cita){
+    public Leccion(int indice, String titulo, String cita, String texto){
+        this.indice = indice;
         this.titulo = titulo;
         this.texto = texto;
         this.cita = cita;
     }
 
-    public void setFrecuenciavisitas(){
+    public void set_Frecuenciavisitas(){
         this.frecuencia_visita += 1;
     }
 
-    // public String getleccion(){
-    //     return titulo;
-    // }
+    public String[] get_info_leccion(){
+        String[] info_leccion = new String[3];
+        info_leccion[0] = this.titulo;
+        info_leccion[1] = this.cita;
+        info_leccion[2] = this.texto;
+        return info_leccion;
+    }
 
-    public int getfrecuencia(){
+    public int get_frecuencia(){
         return this.frecuencia_visita;
     }
 }

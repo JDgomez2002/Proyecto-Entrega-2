@@ -3,19 +3,22 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class pruebas extends JFrame{
+public class pruebasDaniel extends JFrame{
 
     public static void main(String[] args){
-        pruebas miVentana = new pruebas();
-        miVentana.biblioteca();
+        pruebasDaniel miVentana = new pruebasDaniel();
+        Biblioteca lecciones = new Biblioteca();
+        String[] info_programa = lecciones.get_lecciones().get(2).get_info_leccion();
+        miVentana.biblioteca(info_programa[0],info_programa[1],info_programa[2]);
     }
 
-    public void biblioteca(){
+    public void biblioteca(String titulo, String cita, String texto){
         setVisible(true);
         setSize(600,450);
         setLocation(400,200);
         setTitle("Tututor Biblioteca");
-        Panel_texto milamina = new Panel_texto("Matemáticas!","","Daniel Gomez");
+
+        Panel_texto milamina = new Panel_texto(titulo, cita, texto);
         add(milamina);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
@@ -34,8 +37,8 @@ class Panel_texto extends JPanel{
 
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        g.drawString(this.titulo,100,100);
-        g.drawString(this.texto_leccion,100,120);
-        g.drawString(this.cita,100,140);
+        g.drawString(this.titulo,25,75);
+        g.drawString(this.texto_leccion,45,120);
+        g.drawString(this.cita,45,200);
     }
 }

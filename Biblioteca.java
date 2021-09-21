@@ -10,10 +10,33 @@
 //Mario Antonio Guerra Morales 21008
 //Estuardo José Francisco Ayala Argueta 21315 
 
-import java.util.ArrayList;
+import java.util.*;
+import java.io.File;
 
 public class Biblioteca {
-    private ArrayList<Leccion> Leccion;
+    private ArrayList<Leccion> Lecciones = new ArrayList<Leccion>();
 
-    
+    public Biblioteca(){
+        try{
+        for(int k = 0; k<3; k++){
+            String numero_leccion = k+".txt";
+            File myFile = new File(numero_leccion);
+            Scanner scan = new Scanner(myFile);
+            String info_archivo = scan.nextLine();
+            String[] info_separada = info_archivo.split(";");
+            Leccion leccion_n = new Leccion(0, info_separada[0], info_separada[1], info_separada[2]);
+            Lecciones.add(leccion_n);
+        }
+        
+        }
+        catch(Exception e){
+            String s = "Biblioteca: leer archivos: " + e.getMessage();
+            throw new RuntimeException(s);
+        }
+    }
+
+    public ArrayList<Leccion> get_lecciones(){
+        return this.Lecciones;
+    }
+
 }
