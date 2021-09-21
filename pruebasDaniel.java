@@ -32,7 +32,7 @@ class Panel_texto extends JPanel{
     public Panel_texto(String titulo, String texto, String cita){
         this.titulo = titulo;
         this.texto_leccion = texto;
-        this.cita =cita;
+        this.cita = cita;
     }
 
     public void paintComponent(Graphics g){

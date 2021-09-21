@@ -13,9 +13,23 @@
 import java.util.*;
 import java.io.File;
 
-public class Biblioteca {
+/**
+ * Clase de Biblioteca.
+ * Almacena las lecciones en un ArrayList.
+ * 
+ * @author Grupo 8
+ * @version Class Biblioteca 1.1
+ */
+public class Biblioteca{
     private ArrayList<Leccion> Lecciones = new ArrayList<Leccion>();
 
+    /**
+     * Constructor de Biblioteca.
+     * Lee todos los archivos de texto que contienen la informacion de las lecciones.
+     * 
+     * @author Grupo 8
+     * @version Biblioteca 1.1
+     */
     public Biblioteca(){
         try{
         for(int k = 0; k<3; k++){
