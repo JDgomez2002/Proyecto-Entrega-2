@@ -4,12 +4,15 @@ import java.util.*;
 import javax.swing.*;
 import java.awt.*;
 
-// public class pruebasDaniel extends JFrame{
+public class pruebasDaniel extends JFrame{
 
 
-//     public static void main(String[] args){
-//         Scanner scan = new Scanner(System.in);
-//     }
+    public static void main(String[] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("presione enter para continuar");
+        scan.nextLine();
+        System.out.println("Exito!");
+    }
 
 //     // public static void main(String[] args){
 //     //     pruebasDaniel miVentana = new pruebasDaniel();
@@ -83,7 +86,7 @@ import java.awt.*;
 //         g.drawString(this.texto_leccion,55,170);
         
 //     }
-// }
+}
 
 // class Panel_Bienvenida extends JPanel{
 

@@ -26,6 +26,10 @@ public class Interfaz extends JFrame{
     //     miVentana.mostrar_menu();
     // }
 
+    // public void presione_enter(){
+    //     scan
+    // }
+
     public void mostrar_leccion(int k){
         Interfaz miVentana = new Interfaz();
         Biblioteca lecciones = new Biblioteca();
