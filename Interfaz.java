@@ -12,6 +12,11 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Scanner;
+
+
+
+
 
 /**
  * Clase de Interfaz 
@@ -20,6 +25,33 @@ import java.awt.*;
  * @version Class Interfaz 0
  */
 public class Interfaz extends JFrame{
+
+
+    Scanner sn = new Scanner(System.in);
+
+    public int menuOpciones(){
+        boolean siguiente = true;
+        int opcion = 0;
+        while(siguiente){
+            try {
+                opcion = sn.nextInt();
+                if((opcion>0) && (opcion<7)){
+                    System.out.println();
+                    siguiente = false;
+                } else{
+                    System.out.println();
+                    System.out.println("\t\tError: ingrese un número del 1 al 6");
+                    System.out.println();
+                    sn.next();
+                }
+            } catch (Exception e) {
+                System.out.println();
+                System.out.println("\t\tError: ingrese un número válido");
+                System.out.println();
+            }
+        }
+        return opcion;
+    }
 
     // public static void main(String[] args) {
     //     Interfaz miVentana = new Interfaz();
