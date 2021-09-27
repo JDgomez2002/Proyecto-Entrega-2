@@ -13,6 +13,49 @@
 public class MAIN {
     
     public static void main(String[] args){
+        Interfaz vista = new Interfaz();
+        boolean continuar = true;
+        int opcion_usuario = 0;
 
+        while(continuar){
+            vista.mostrar_bienvenida();
+            vista.mostrar_menu();
+            // opcion_usuario = metodo de vista;
+            switch (opcion_usuario){
+                //Biblioteca
+                case 1:
+                    
+                    break;
+
+                //Buscar_leccion
+                case 2:
+
+                    break;
+
+                //Simluador de examen de admision
+                case 3:
+                    
+                    break;
+
+                //Historial de lecciones
+                case 4:
+
+                    break;
+
+                //Mi cuenta
+                case 5:
+                    
+                    break;
+
+                //finalizar programa
+                case 6:
+                    continuar = false;
+                    break;
+            
+                default:
+                    vista.mostrar_mensaje_error_consola();
+                    break;
+            }
+        }
     }
 }
