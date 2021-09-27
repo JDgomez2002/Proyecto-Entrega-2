@@ -19,12 +19,14 @@ public class MAIN {
 
         while(continuar){
             vista.mostrar_bienvenida();
+            vista.presione_enter();
             vista.mostrar_menu();
-            // opcion_usuario = metodo de vista;
+            opcion_usuario = vista.menuOpciones();
             switch (opcion_usuario){
                 //Biblioteca
                 case 1:
-                    
+                    vista.mostrar_leccion(opcion_usuario);
+                    vista.presione_enter();
                     break;
 
                 //Buscar_leccion

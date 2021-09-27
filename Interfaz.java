@@ -25,8 +25,6 @@ import java.util.Scanner;
  * @version Class Interfaz 0
  */
 public class Interfaz extends JFrame{
-
-
     Scanner sn = new Scanner(System.in);
 
     public int menuOpciones(){
@@ -34,6 +32,8 @@ public class Interfaz extends JFrame{
         int opcion = 0;
         while(siguiente){
             try {
+                System.out.println();
+                System.out.print("Digite su opcion aqui: ");
                 opcion = sn.nextInt();
                 if((opcion>0) && (opcion<7)){
                     System.out.println();
@@ -53,14 +53,12 @@ public class Interfaz extends JFrame{
         return opcion;
     }
 
-    // public static void main(String[] args) {
-    //     Interfaz miVentana = new Interfaz();
-    //     miVentana.mostrar_menu();
-    // }
-
-    // public void presione_enter(){
-    //     scan
-    // }
+    public void presione_enter(){
+        System.out.println();
+        System.out.println("Presione ENTER para continuar...");
+        sn.nextLine();
+        System.out.println();
+    }
 
     public void mostrar_leccion(int k){
         Interfaz miVentana = new Interfaz();
@@ -69,7 +67,7 @@ public class Interfaz extends JFrame{
         miVentana.mostrar_leccion(info_programa[0],info_programa[1],info_programa[2]);
     }
 
-    public void mostrar_leccion(String titulo, String cita, String texto){
+    private void mostrar_leccion(String titulo, String cita, String texto){
         setVisible(true);
         setSize(1500,800);
         setLocation(100,100);
@@ -80,6 +78,7 @@ public class Interfaz extends JFrame{
     }
 
     public void mostrar_bienvenida(){
+        setVisible(false);
         setVisible(true);
         setSize(1500,800);
         setLocation(100,100);
@@ -90,10 +89,12 @@ public class Interfaz extends JFrame{
     }
 
     public void mostrar_menu(){
+        setVisible(false);
         setVisible(true);
         setSize(1500,800);
         setLocation(100,100);
         setTitle("Tututor APP");
+        // clear();
         Panel_Menu menu = new Panel_Menu();
         add(menu);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
