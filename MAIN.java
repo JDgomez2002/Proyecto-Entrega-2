@@ -24,7 +24,8 @@ public class MAIN {
                 //Biblioteca
                 case 1:
                     // vista.mostrar_leccion(opcion_usuario);
-                    vista.presione_enter();
+                    // vista.presione_enter();
+                    
                     break;
 
                 //Buscar_leccion

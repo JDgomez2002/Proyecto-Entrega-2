@@ -13,10 +13,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.Scanner;
-
-
-
-
+import java.time.LocalTime;
 
 /**
  * Clase de Interfaz 
@@ -58,7 +55,7 @@ public class Interfaz extends JFrame{
         System.out.println();
         System.out.println("Tututor APP");
         System.out.println("- BIENVENIDO");
-        //System.out.println("- Hora: "+LocalTime.now().getHour()+" horas con "+LocalTime.now().getMinute()+" minutos.");
+        System.out.println("- Hora: "+LocalTime.now().getHour()+" horas con "+LocalTime.now().getMinute()+" minutos.");
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
         System.out.println("- Esta APP es Tututor, de estudiantes para estudiantes.");
         System.out.println("- En esta aplicacion podras prepararte para tu examen de admision de la universidad.");
