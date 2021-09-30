@@ -21,7 +21,7 @@ import java.io.File;
  * @version Class Biblioteca 1.1
  */
 public class Biblioteca{
-    private ArrayList<Leccion> Lecciones = new ArrayList<Leccion>();
+    private ArrayList<Leccion> lecciones = new ArrayList<Leccion>();
 
     /**
      * Constructor de Biblioteca.
@@ -32,14 +32,14 @@ public class Biblioteca{
      */
     public Biblioteca(){
         try{
-        for(int k = 0; k<3; k++){
+        for(int k = 0; k<8; k++){
             String numero_leccion = k+".txt";
             File myFile = new File(numero_leccion);
             Scanner scan = new Scanner(myFile);
             String info_archivo = scan.nextLine();
             String[] info_separada = info_archivo.split(";");
             Leccion leccion_n = new Leccion((k+1), info_separada[0], info_separada[1], info_separada[2]);
-            Lecciones.add(leccion_n);
+            lecciones.add(leccion_n);
         }
         
         }
@@ -56,7 +56,25 @@ public class Biblioteca{
      * @return Lecciones String
      */
     public ArrayList<Leccion> get_lecciones(){
-        return this.Lecciones;
+        return this.lecciones;
     }
 
+    public Leccion obtener_leccion(int indice){
+        boolean continuar = true;
+        Leccion leccion_actual = null;
+        int contador = 0;
+
+        while(continuar&&(contador<this.lecciones.size())){
+            if(indice == (this.lecciones.get(contador).get_indice())){
+                leccion_actual = this.lecciones.get(contador);
+                continuar = false;
+            }
+            else{
+                contador += 1;
+            }
+        }
+        return leccion_actual;
+    }
+
+    
 }

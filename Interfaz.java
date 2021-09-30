@@ -20,7 +20,8 @@ import java.time.LocalTime;
  * @version Class Interfaz 0
  */
 public class Interfaz{
-    Scanner sn = new Scanner(System.in);
+    private Scanner sn = new Scanner(System.in);
+    private Biblioteca biblioteca = new Biblioteca();
 
     public void bienvenida(){
         System.out.println();
@@ -65,4 +66,23 @@ public class Interfaz{
         }
         return opcion;
     }
+
+    public void recibir_indice_leccion(){
+
+    }
+
+    //LINDA
+    public void mostrar_leccion(Leccion leccion_a_mostrar){
+        String[] datos_leccion = leccion_a_mostrar.get_info_leccion();
+        System.out.println();
+        //titulo
+        System.out.println();
+        //cita
+        System.out.println();
+        //texto
+        System.out.println();
+    }
+
+
+
 }

@@ -26,6 +26,7 @@ public class Leccion {
     private String titulo;
     private String texto;
     private String cita;
+    private String tema;
     private int frecuencia_visita;
 
 
@@ -76,4 +77,12 @@ public class Leccion {
     public int get_frecuencia(){
         return this.frecuencia_visita;
     }
+
+    public int get_indice(){
+        return this.indice;
+    }
+
+    // public String get_nombre(){
+    //     return this.titulo;
+    // }
 }

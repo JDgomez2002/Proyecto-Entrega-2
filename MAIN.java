@@ -14,6 +14,7 @@ public class MAIN {
     
     public static void main(String[] args){
         Interfaz vista = new Interfaz();
+        Biblioteca biblioteca = new Biblioteca();
 
         boolean continuar = true;
         int opcion_usuario = 0;
@@ -25,7 +26,7 @@ public class MAIN {
             switch (opcion_usuario){
                 //Biblioteca
                 case 1:
-                    
+                    // System.out.println("Leccion "+biblioteca.obtener_leccion(7).get_nombre());
 
                     break;
 
