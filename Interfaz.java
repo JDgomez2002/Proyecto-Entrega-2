@@ -53,6 +53,22 @@ public class Interfaz extends JFrame{
         return opcion;
     }
 
+    public void bienvenida(){
+        System.out.println();
+        System.out.println();
+        System.out.println("Tututor APP");
+        System.out.println("- BIENVENIDO");
+        //System.out.println("- Hora: "+LocalTime.now().getHour()+" horas con "+LocalTime.now().getMinute()+" minutos.");
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+        System.out.println("- Esta APP es Tututor, de estudiantes para estudiantes.");
+        System.out.println("- En esta aplicacion podras prepararte para tu examen de admision de la universidad.");
+        System.out.println("- Podras encontrar distintos temas, como Matematica, Fisica, Biologia, Computacion, Estadistica, y entre muchos mas!");
+        System.out.println("- Podras acceder a muchas lecciones, y poder crear tu cuenta.");
+        System.out.println("- Tu historial se mantendra para que puedas regresar a las lecciones que dejaste pendiente.");
+        System.out.println("Recuerda que el mayor logro, se obtiene con el mayor esfuerzo!");
+        System.out.println("- Siempre sigue aprendiendo!!");
+    }
+
     public void presione_enter(){
         System.out.println();
         System.out.println("Presione ENTER para continuar...");
