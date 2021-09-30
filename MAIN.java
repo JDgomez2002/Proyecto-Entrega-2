@@ -18,14 +18,12 @@ public class MAIN {
         int opcion_usuario = 0;
 
         while(continuar){
-            vista.mostrar_bienvenida();
-            vista.presione_enter();
-            vista.mostrar_menu();
-            opcion_usuario = vista.menuOpciones();
+            // vista.mostrar_bienvenida();
+            // opcion_usuario = vista.mostrar_menu();
             switch (opcion_usuario){
                 //Biblioteca
                 case 1:
-                    vista.mostrar_leccion(opcion_usuario);
+                    // vista.mostrar_leccion(opcion_usuario);
                     vista.presione_enter();
                     break;
 
@@ -55,7 +53,7 @@ public class MAIN {
                     break;
             
                 default:
-                    vista.mostrar_mensaje_error_consola();
+                    // vista.mostrar_mensaje_error_consola();
                     break;
             }
         }
