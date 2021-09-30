@@ -14,18 +14,19 @@ public class MAIN {
     
     public static void main(String[] args){
         Interfaz vista = new Interfaz();
+
         boolean continuar = true;
         int opcion_usuario = 0;
 
+        vista.bienvenida();
+
         while(continuar){
-            // vista.mostrar_bienvenida();
-            // opcion_usuario = vista.mostrar_menu();
+            opcion_usuario = vista.menuOpciones();
             switch (opcion_usuario){
                 //Biblioteca
                 case 1:
-                    // vista.mostrar_leccion(opcion_usuario);
-                    // vista.presione_enter();
                     
+
                     break;
 
                 //Buscar_leccion
