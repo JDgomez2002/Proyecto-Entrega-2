@@ -21,7 +21,6 @@ public class Controlador {
         vista.bienvenida();
 
         while(continuar){
-
             opcion_usuario = vista.menuOpciones();
             switch (opcion_usuario){
                 //Biblioteca
@@ -31,7 +30,7 @@ public class Controlador {
 
                 //Buscar_leccion
                 case 2:
-
+                    
                     break;
 
                 //Simluador de examen de admision

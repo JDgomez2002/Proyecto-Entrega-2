@@ -10,5 +10,7 @@ public class pruebasDaniel{
         System.out.println("presione enter para continuar");
         scan.nextLine();
         System.out.println("Exito!");
+
+        
     }
 }
