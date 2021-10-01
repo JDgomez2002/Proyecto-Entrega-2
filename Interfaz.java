@@ -88,6 +88,7 @@ public class Interfaz{
                 System.out.print("Desea seguir en la biblioteca? (Si/No):");
                 String volver_al_menu = "";
                 volver_al_menu = sn.nextLine();
+                System.out.println();
                 if((volver_al_menu.equals("No"))||(volver_al_menu.equals("NO"))||(volver_al_menu.equals("no"))){
                     continuar = false;
                 }
