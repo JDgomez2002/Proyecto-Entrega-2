@@ -61,28 +61,32 @@ public class Interfaz{
             try {
                 System.out.println();
                 System.out.println("------------ MENU PRINCIPAL ------------");
+                System.out.println();
                 System.out.println("1. Mostras Biblioteca");
-                System.out.println("2. Buscar Lección");
-                System.out.println("3. Simulador de examen de admisión");
+                System.out.println("2. Buscar Leccion");
+                System.out.println("3. Simulador de examen de admision");
                 System.out.println("4. Historial de Lecciones");
                 System.out.println("5. Mi cuenta");
                 System.out.println("6. Salir\n");
+                System.out.println();
                 System.out.print("Digite su opcion aqui: ");
+                sn = new Scanner(System.in);
                 opcion = sn.nextInt();
                 if((opcion>0) && (opcion<7)){
                     System.out.println("---------------------------------------------------------------------------------------------------------------------");
                     System.out.println();
                     siguiente = false;
-                } else{
+                }
+                else{
                     System.out.println();
-                    System.out.println("\t\tError: ingrese un número del 1 al 6");
+                    System.out.println("\t\tError: ingrese un numero del 1 al 6");
                     System.out.println();
-                    sn.next();
                 }
             } catch (Exception e) {
                 System.out.println();
-                System.out.println("\t\tError: ingrese un número válido");
+                System.out.println("\t\tError: ingrese un numero valido");
                 System.out.println();
+                sn.next();
             }
         }
         return opcion;
@@ -106,7 +110,7 @@ public class Interfaz{
             leccion_a_mostrar = this.biblioteca.obtener_leccion(leccion);
             mostrar_leccion(leccion_a_mostrar);
             try{
-                System.out.print("Desea seguir en la biblioteca? (Si/No): ");
+                System.out.print("\t\tDesea seguir en la biblioteca? (Si/No): ");
                 sn = new Scanner(System.in);
                 volver_al_menu = sn.nextLine();
                 System.out.println();
@@ -137,17 +141,22 @@ public class Interfaz{
             try {
                 System.out.println();
                 System.out.println("------------ BIBLIOTECA ------------");
+                System.out.println();
                 System.out.println("--- MATEMATICA ---");
+                System.out.println();
                 for(int k = 0; k<4; k++){
                     System.out.println((k+1)+" "+this.biblioteca.get_lecciones().get(k).get_titulo());
                 }
                 System.out.println();
                 System.out.println("--- FISICA ---");
+                System.out.println();
                 for(int i = 4; i<8; i++){
                     System.out.println((i+1)+" "+this.biblioteca.get_lecciones().get(i).get_titulo());
                 }
                 System.out.println();
+                System.out.println();
                 System.out.print("Digite su opcion aqui: ");
+                sn = new Scanner(System.in);
                 opcion = sn.nextInt();
                 if((opcion>0) && (opcion<9)){
                     opcion -= 1;
@@ -158,12 +167,11 @@ public class Interfaz{
                     System.out.println();
                     System.out.println("\t\tError: Su opcion debe de ser un indice de las lecciones de la biblioteca...");
                     System.out.println();
-                    sn.next();
                 }
             } catch (Exception e) {
                 System.out.println();
                 System.out.println("\t\tError: Su opcion debe de ser un indice de las lecciones de la biblioteca...");
-                System.out.println();
+                sn.next();
             }
         }
         return opcion;
@@ -195,7 +203,7 @@ public class Interfaz{
                 System.out.println();
             }
             try{
-                System.out.print("Desea seguir buscando? (Si/No): ");
+                System.out.print("\t\tDesea seguir buscando? (Si/No): ");
                 sn = new Scanner(System.in);
                 volver_al_menu = sn.nextLine();
                 System.out.println();
@@ -220,12 +228,15 @@ public class Interfaz{
      */
     public void mostrar_pestana_buscar(){
         System.out.println();
-        System.out.println("------------ BUSCAR LECCION ------------");
+        System.out.println("------------------ BUSCAR LECCION ------------------");
+        System.out.println();
         System.out.println("- En esta pestana podras buscar lecciones por medio de su titulo.");
         System.out.println("- Solo basta escribir el nombre de la leccion.");
         System.out.println("- Sin embargo, tambien puedes buscarlas por palabras claves!");
+        System.out.println("- Algunas palabras clave pueden ser:");
+        System.out.println("  Movimiento, Numeros, Derivadas, Ecuaciones, entre otras...");
         System.out.println("- Que el aprendizaje nunca termine!!!");
-        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+        
     }
 
     /**
@@ -246,15 +257,19 @@ public class Interfaz{
                 sn = new Scanner(System.in);
                 leccion_buscada = sn.nextLine();
                 if(leccion_buscada.equals("")){
+                    System.out.println();
                     System.out.println("\t\t- ERROR: digite un titulo de leccion valido.");
                 }
                 else{
+                    System.out.println("---------------------------------------------------------------------------------------------------------------------");
                     leccion_buscada = leccion_buscada.toLowerCase();
                     continuar = false;
                 }
             }
             catch(Exception e){
-                System.out.println("\t\t- ERROR: digite un titulo de leccion valido.");
+                System.out.println();
+                System.out.println("\t\t- ERROR: digite un titulo de leccion o palabra clave valida.");
+                sn.next();
             }
         }
         return leccion_buscada;   
@@ -294,6 +309,7 @@ public class Interfaz{
      */
     public void despedida(){
         System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
         System.out.println("- Gracias por utilizar Tututor!!!");
         System.out.println("- Vuelve pronto!");
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
@@ -310,7 +326,8 @@ public class Interfaz{
         System.out.println();
         System.out.println("\t\t- Lo sentimos, el simulador de examen aun no esta disponible...");
         System.out.println("\t\t- Estara disponible en la FASE 03 del Proyecto POO 2021.");
-        System.out.println("\t- Regresando al Menu...");
+        System.out.println();
+        System.out.println("\t\t- Regresando al Menu...");
         System.out.println();
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
     }
@@ -325,7 +342,8 @@ public class Interfaz{
         System.out.println();
         System.out.println("\t\t- Lo sentimos, el historial de sus lecciones aun no esta disponible...");
         System.out.println("\t\t- Estara disponible en la FASE 03 del Proyecto POO 2021.");
-        System.out.println("\t- Regresando al Menu...");
+        System.out.println();
+        System.out.println("\t\t- Regresando al Menu...");
         System.out.println();
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
     }
@@ -340,7 +358,8 @@ public class Interfaz{
         System.out.println();
         System.out.println("\t\t- Lo sentimos, su cuenta aun no esta disponible...");
         System.out.println("\t\t- Estara disponible en la FASE 03 del Proyecto POO 2021.");
-        System.out.println("\t- Regresando al Menu...");
+        System.out.println();
+        System.out.println("\t\t- Regresando al Menu...");
         System.out.println();
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
     }
