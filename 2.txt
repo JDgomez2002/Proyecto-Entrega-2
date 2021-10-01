@@ -1,1 +1,1 @@
-Momento Lineal;(Wilson J., Buffa A. & Lou B., 2007);Impulso o momentum es el choque entre partículas o pequeño lapso de tiempo en el que están en contacto.*Ecuaciones:*P = mv I = FΔt.*Fórmula de Conservación de Movimiento. *U = Vf m1Vo1 + m2Vo2 = m1U1 + m2U2.                           
+Momento Lineal;(Wilson J., Buffa A. & Lou B., 2007); Impulso o momentum es el choque entre partículas o pequeño lapso de tiempo en el que están en contacto.: Ecuaciones.: P = mv I = FΔt.: Fórmula de Conservación de Movimiento.: U = Vf m1Vo1 + m2Vo2 = m1U1 + m2U2.
