@@ -75,21 +75,89 @@ public class Interfaz{
         return opcion;
     }
 
-    public void recibir_indice_leccion(){
+    public void biblioteca(){
+        boolean continuar = true;
 
+        while(continuar){
+            int leccion = 0;
+            leccion = indice_leccion_biblioteca();
+            Leccion leccion_a_mostrar = null;
+            leccion_a_mostrar = this.biblioteca.obtener_leccion(leccion);
+            mostrar_leccion(leccion_a_mostrar);
+            try{
+                System.out.print("Desea seguir en la biblioteca? (Si/No):");
+                String volver_al_menu = "";
+                volver_al_menu = sn.nextLine();
+                if((volver_al_menu.equals("No"))||(volver_al_menu.equals("NO"))||(volver_al_menu.equals("no"))){
+                    continuar = false;
+                }
+            }
+            catch(Exception e){
+                continuar = false;
+            }
+        }
+        System.out.println();
+        System.out.println("- Regresando al menu...");
+        System.out.println();
     }
 
-    //LINDA
+    public int indice_leccion_biblioteca(){
+        boolean siguiente = true;
+        int opcion = 0;
+        while(siguiente){
+            try {
+                System.out.println();
+                System.out.println("------------ BIBLIOTECA ------------");
+                System.out.println("--- MATEMATICA ---");
+                for(int k = 0; k<4; k++){
+                    System.out.println((k+1)+" "+this.biblioteca.get_lecciones().get(k).get_titulo());
+                }
+                System.out.println();
+                System.out.println("--- FISICA ---");
+                for(int i = 4; i<8; i++){
+                    System.out.println((i+1)+" "+this.biblioteca.get_lecciones().get(i).get_titulo());
+                }
+                System.out.println();
+                System.out.print("Digite su opcion aqui: ");
+                opcion = sn.nextInt();
+                if((opcion>0) && (opcion<9)){
+                    System.out.println("---------------------------------------------------------------------------------------------------------------------");
+                    System.out.println();
+                    siguiente = false;
+                } else{
+                    System.out.println();
+                    System.out.println("\t\tError: Su opcion debe de ser un indice de las lecciones de la biblioteca...");
+                    System.out.println();
+                    sn.next();
+                }
+            } catch (Exception e) {
+                System.out.println();
+                System.out.println("\t\tError: Su opcion debe de ser un indice de las lecciones de la biblioteca...");
+                System.out.println();
+            }
+        }
+        return opcion;
+    }
+
     public void mostrar_leccion(Leccion leccion_a_mostrar){
         String[] datos_leccion = leccion_a_mostrar.get_info_leccion();
+        String[] texto_leccion = datos_leccion[2].split(":");
         System.out.println();
-        //titulo
+        System.out.println("-- LECCION --");
         System.out.println();
-        //cita
+        System.out.print("Titulo: ");
+        System.out.println(datos_leccion[0]);
         System.out.println();
-        //texto
+        System.out.print("Referencia: ");
+        System.out.println(datos_leccion[1]);
+        System.out.println();
+        for(int k = 0; k<texto_leccion.length; k++){
+            System.out.println(texto_leccion[k]);
+        }
         System.out.println();
     }
+
+
 
     public void despedida(){
         System.out.println();

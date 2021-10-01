@@ -82,7 +82,7 @@ public class Leccion {
         return this.indice;
     }
 
-    // public String get_nombre(){
-    //     return this.titulo;
-    // }
+    public String get_titulo(){
+        return this.titulo;
+    }
 }

@@ -27,8 +27,7 @@ public class MAIN {
             switch (opcion_usuario){
                 //Biblioteca
                 case 1:
-                    
-
+                    vista.biblioteca();
                     break;
 
                 //Buscar_leccion
