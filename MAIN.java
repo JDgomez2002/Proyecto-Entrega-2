@@ -22,7 +22,7 @@ public class MAIN {
         vista.bienvenida();
 
         while(continuar){
-            
+
             opcion_usuario = vista.menuOpciones();
             switch (opcion_usuario){
                 //Biblioteca
@@ -53,6 +53,7 @@ public class MAIN {
 
                 //finalizar programa
                 case 6:
+                    vista.despedida();
                     continuar = false;
                     break;
             

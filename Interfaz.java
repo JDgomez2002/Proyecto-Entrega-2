@@ -47,6 +47,7 @@ public class Interfaz{
         while(siguiente){
             try {
                 System.out.println();
+                System.out.println("------------ MENU PRINCIPAL ------------");
                 System.out.println("1. Mostras Biblioteca");
                 System.out.println("2. Buscar Lección");
                 System.out.println("3. Simulador de examen de admisión");
@@ -56,6 +57,7 @@ public class Interfaz{
                 System.out.print("Digite su opcion aqui: ");
                 opcion = sn.nextInt();
                 if((opcion>0) && (opcion<7)){
+                    System.out.println("---------------------------------------------------------------------------------------------------------------------");
                     System.out.println();
                     siguiente = false;
                 } else{
@@ -89,6 +91,13 @@ public class Interfaz{
         System.out.println();
     }
 
+    public void despedida(){
+        System.out.println();
+        System.out.println("- Gracias por utilizar Tututor!!!");
+        System.out.println("- Vuelve pronto!");
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+        System.out.println();
+    }
 
 
 }
