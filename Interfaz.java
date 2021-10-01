@@ -47,6 +47,12 @@ public class Interfaz{
         while(siguiente){
             try {
                 System.out.println();
+                System.out.println("1. Mostras Biblioteca");
+                System.out.println("2. Buscar Lección");
+                System.out.println("3. Simulador de examen de admisión");
+                System.out.println("4. Historial de Lecciones");
+                System.out.println("5. Mi cuenta");
+                System.out.println("6. Salir\n");
                 System.out.print("Digite su opcion aqui: ");
                 opcion = sn.nextInt();
                 if((opcion>0) && (opcion<7)){
