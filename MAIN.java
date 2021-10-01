@@ -26,7 +26,13 @@ public class MAIN {
      * @version main 1.1
      */
     public static void main(String[] args) {
-        Controlador programa = new Controlador();
-        programa.Tututor();
+        try{
+            Controlador programa = new Controlador();
+            programa.Tututor();
+        }
+        catch(Exception e){
+            String s = "- Lo sentimos... Ha ocurrido un error: "+e.getMessage();
+            System.out.println(s);
+        }
     }
 }
