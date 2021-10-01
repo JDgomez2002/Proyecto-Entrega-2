@@ -75,6 +75,22 @@ public class Biblioteca{
         }
         return leccion_actual;
     }
+    
+    public Leccion obtener_leccion2(String titulo){
+        boolean continuar = true;
+        Leccion leccion_actual = null;
+        int contador = 0;
 
+        while(continuar&&(contador<this.lecciones.size())){
+            if(titulo == (this.lecciones.get(contador).get_titulo())){
+                leccion_actual = this.lecciones.get(contador);
+                continuar = false;
+            }
+            else{
+                contador += 1;
+            }
+        }
+        return leccion_actual;
+    }
     
 }
