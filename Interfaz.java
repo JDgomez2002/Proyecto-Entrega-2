@@ -86,7 +86,7 @@ public class Interfaz{
             leccion_a_mostrar = this.biblioteca.obtener_leccion(leccion);
             mostrar_leccion(leccion_a_mostrar);
             try{
-                System.out.print("Desea seguir en la biblioteca? (Si/No):");
+                System.out.print("Desea seguir en la biblioteca? (Si/No): ");
                 sn = new Scanner(System.in);
                 volver_al_menu = sn.nextLine();
                 System.out.println();
