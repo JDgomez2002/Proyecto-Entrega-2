@@ -10,7 +10,21 @@
 //Mario Antonio Guerra Morales 21008
 //Estuardo José Francisco Ayala Argueta 21315
 
+/**
+ * Clase MAIN 
+ * Funciona como el controlador General del programa.
+ * 
+ * @author Grupo 8
+ * @version Class MAIN 1.1
+ */
 public class MAIN {
+
+    /**
+     * Metodo Main
+     * 
+     * @author Grupo 8
+     * @version main 1.1
+     */
     public static void main(String[] args) {
         Controlador programa = new Controlador();
         programa.Tututor();

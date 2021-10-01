@@ -8,7 +8,7 @@
 //José Daniel Gómez Cabrera 21429
 //Linda Inés Jiménez Vides 21169
 //Mario Antonio Guerra Morales 21008
-//Estuardo José Francisco Ayala Argueta 21315 
+//Estuardo José Francisco Ayala Argueta 21315
 
 import java.util.*;
 import java.io.File;
@@ -48,6 +48,7 @@ public class Biblioteca{
             throw new RuntimeException(s);
         }
     }
+
     /**
      * Getter de las lecciones
      * 
@@ -59,6 +60,14 @@ public class Biblioteca{
         return this.lecciones;
     }
 
+    /**
+     * Metodo que devuelve la leccion por medio de su propiedad indice.
+     * 
+     * @author Grupo 8
+     * @version obtener_leccion 1.1
+     * @return Leccion
+     * @param int
+     */
     public Leccion obtener_leccion(int indice){
         boolean continuar = true;
         Leccion leccion_actual = null;
@@ -76,6 +85,15 @@ public class Biblioteca{
         return leccion_actual;
     }
     
+    /**
+     * Metodo que devuelve la leccion por medio de un String.
+     * Utiliza el metodo contains para tambien poder buscar por palabras claves.
+     * 
+     * @author Grupo 8
+     * @version obtener_leccion_2 1.1
+     * @return Leccion
+     * @param String
+     */
     public Leccion obtener_leccion_2(String string_usuario){
         string_usuario = string_usuario.toLowerCase();
         boolean continuar = true;
@@ -95,5 +113,4 @@ public class Biblioteca{
         }
         return leccion_actual;
     }
-    
 }

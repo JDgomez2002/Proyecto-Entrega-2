@@ -10,9 +10,20 @@
 //Mario Antonio Guerra Morales 21008
 //Estuardo José Francisco Ayala Argueta 21315
 
-
+/**
+ * Clase Controlador.
+ * 
+ * @author Grupo 8
+ * @version Controlador 1.1
+ */
 public class Controlador {
     
+    /**
+     * Metodo del programa Tututor.
+     * 
+     * @author Grupo 8
+     * @version Tututor 1.1
+     */
     public void Tututor(){
         Interfaz vista = new Interfaz();
 
@@ -36,17 +47,17 @@ public class Controlador {
 
                 //Simluador de examen de admision
                 case 3:
-                    
+                    vista.simulador_no_disponible();
                     break;
 
                 //Historial de lecciones
                 case 4:
-
+                    vista.historial_no_disponible();
                     break;
 
                 //Mi cuenta
                 case 5:
-                    
+                    vista.mi_cuenta_no_disponible();
                     break;
 
                 //finalizar programa

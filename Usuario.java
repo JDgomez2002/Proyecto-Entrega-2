@@ -11,6 +11,7 @@
 //Estuardo José Francisco Ayala Argueta 21315
 
 import java.util.ArrayList;
+
  /**
   * Clase de Usuario con las variables necesarias
   *

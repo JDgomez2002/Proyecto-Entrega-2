@@ -23,6 +23,12 @@ public class Interfaz{
     private Scanner sn = new Scanner(System.in);
     private Biblioteca biblioteca = new Biblioteca();
 
+    /**
+     * Bienvenida al usuario.
+     * 
+     * @author Grupo 8
+     * @version bienvenida 1.1
+     */
     public void bienvenida(){
         System.out.println();
         System.out.println();
@@ -41,6 +47,13 @@ public class Interfaz{
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
     }
 
+    /**
+     * Muestra el menu principal y devuelve la opcion que desee elegir del menu.
+     * 
+     * @author Grupo 8
+     * @version menuOpciones 1.1
+     * @return int
+     */
     public int menuOpciones(){
         boolean siguiente = true;
         int opcion = 0;
@@ -75,6 +88,13 @@ public class Interfaz{
         return opcion;
     }
 
+    /**
+     * Metodo encargado de administrar la biblioteca.
+     * Utiliza el metodo indice_leccion_biblioteca y mostrar_leccion.
+     * 
+     * @author Grupo 8
+     * @version biblioteca 1.1
+     */
     public void biblioteca(){
         boolean continuar = true;
         String volver_al_menu = "";
@@ -103,6 +123,13 @@ public class Interfaz{
         System.out.println();
     }
 
+    /**
+     * Metodo encargado de mostrar la biblioteca y de retornar el indice de leccion que se desea acceder.
+     * 
+     * @author Grupo 8
+     * @version indice_leccion_biblioteca 1.1
+     * @return int
+     */
     public int indice_leccion_biblioteca(){
         boolean siguiente = true;
         int opcion = 0;
@@ -141,6 +168,13 @@ public class Interfaz{
         return opcion;
     }
 
+    /**
+     * Metodo encargado de administrar la pestana busqueda.
+     * Utiliza los metodos mostrar_pestana_buscar, solicitar_leccion_buscar y obtener_leccion_2.
+     * 
+     * @author Grupo 8
+     * @version buscar_leccion 1.1
+     */
     public void buscar_leccion(){
         boolean continuar = true;
         String volver_al_menu = "";
@@ -175,6 +209,12 @@ public class Interfaz{
         System.out.println();
     }
 
+    /**
+     * Muestra el encabezado de la pestana buscar.
+     * 
+     * @author Grupo 8
+     * @version mostrar_pestana_buscar 1.1
+     */
     public void mostrar_pestana_buscar(){
         System.out.println();
         System.out.println("------------ BUSCAR LECCION ------------");
@@ -185,6 +225,14 @@ public class Interfaz{
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
     }
 
+    /**
+     * Solicita un String de la leccion que desea buscar al usuario.
+     * Si el texto es vacio o hay una excepcion, el metodo se mantiene solicitando el String al usuario.
+     * 
+     * @author Grupo 8
+     * @version solicitar_leccion_a_buscar 1.1
+     * @return String
+     */
     public String solicitar_leccion_a_buscar(){
         boolean continuar = true;
         String leccion_buscada = "";
@@ -209,6 +257,14 @@ public class Interfaz{
         return leccion_buscada;   
     }
 
+    /**
+     * Metodo encargado de mostrar una leccion.
+     * Se utiliza en la biblioteca y busqueda.
+     * 
+     * @author Grupo 8
+     * @version mostrar_leccion 1.1
+     * @param Leccion
+     */
     public void mostrar_leccion(Leccion leccion_a_mostrar){
         String[] datos_leccion = leccion_a_mostrar.get_info_leccion();
         String[] texto_leccion = datos_leccion[2].split(":");
@@ -227,8 +283,12 @@ public class Interfaz{
         System.out.println();
     }
 
-
-
+    /**
+     * Despedida para el usuario.
+     * 
+     * @author Grupo 8
+     * @version despedida 1.1
+     */
     public void despedida(){
         System.out.println();
         System.out.println("- Gracias por utilizar Tututor!!!");
@@ -237,5 +297,48 @@ public class Interfaz{
         System.out.println();
     }
 
+    /**
+     * Mensaje informativo para el usuario.
+     * 
+     * @author Grupo 8
+     * @version simulador_no_disponible 1.1
+     */
+    public void simulador_no_disponible(){
+        System.out.println();
+        System.out.println("\t\t- Lo sentimos, el simulador de examen aun no esta disponible...");
+        System.out.println("\t\t- Estara disponible en la FASE 03 del Proyecto POO 2021.");
+        System.out.println("\t- Regresando al Menu...");
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+    }
 
+    /**
+     * Mensaje informativo para el usuario.
+     * 
+     * @author Grupo 8
+     * @version historial_no_disponible 1.1
+     */
+    public void historial_no_disponible(){
+        System.out.println();
+        System.out.println("\t\t- Lo sentimos, el historial de sus lecciones aun no esta disponible...");
+        System.out.println("\t\t- Estara disponible en la FASE 03 del Proyecto POO 2021.");
+        System.out.println("\t- Regresando al Menu...");
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+    }
+
+    /**
+     * Mensaje informativo para el usuario.
+     * 
+     * @author Grupo 8
+     * @version mi_cuenta_no_disponible 1.1
+     */
+    public void mi_cuenta_no_disponible(){
+        System.out.println();
+        System.out.println("\t\t- Lo sentimos, su cuenta aun no esta disponible...");
+        System.out.println("\t\t- Estara disponible en la FASE 03 del Proyecto POO 2021.");
+        System.out.println("\t- Regresando al Menu...");
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+    }
 }

@@ -9,14 +9,9 @@
 //Linda Inés Jiménez Vides 21169
 //Mario Antonio Guerra Morales 21008
 //Estuardo José Francisco Ayala Argueta 21315
-//Prueba de comentario
-
-
-import java.util.ArrayList;
-
 
 /**
- * Clase de Lecciones 
+ * Clase de Leccion 
  * 
  * @author Grupo 8
  * @version Class Leccion 1.1
@@ -26,10 +21,7 @@ public class Leccion {
     private String titulo;
     private String texto;
     private String cita;
-    private String tema;
     private int frecuencia_visita;
-
-
 
     /**
      * Constructor de Leccion con propiedades
@@ -44,6 +36,7 @@ public class Leccion {
         this.texto = texto;
         this.cita = cita;
     }
+
     /**
      * Método para actualizar la frecuencia de visitas cada vez que se visite la leccion correspondiente
      * 
@@ -53,6 +46,7 @@ public class Leccion {
     public void set_Frecuenciavisitas(){
         this.frecuencia_visita += 1;
     }
+
     /**
      * getter de la información de la cuál está conformada la lección deseada
      * 
@@ -67,6 +61,7 @@ public class Leccion {
         info_leccion[2] = this.texto;
         return info_leccion;
     }
+
     /**
      * getter de frecuencia de visita a la leccion
      * 
@@ -78,10 +73,24 @@ public class Leccion {
         return this.frecuencia_visita;
     }
 
+    /**
+     * getter de indice de la leccion
+     * 
+     * @author Grupo 8
+     * @version get_indice 1.1
+     * @return int
+     */
     public int get_indice(){
         return this.indice;
     }
 
+    /**
+     * getter de titulo de la leccion
+     * 
+     * @author Grupo 8
+     * @version get_titulo 1.1
+     * @return String
+     */
     public String get_titulo(){
         return this.titulo;
     }

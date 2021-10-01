@@ -3,8 +3,6 @@
 import java.util.*;
 
 public class pruebasDaniel{
-
-
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
 
@@ -22,7 +20,5 @@ public class pruebasDaniel{
         else{
             System.out.println("NO SIRVE");
         }
-
-
     }
 }
