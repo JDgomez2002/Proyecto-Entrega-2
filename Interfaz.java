@@ -77,6 +77,7 @@ public class Interfaz{
 
     public void biblioteca(){
         boolean continuar = true;
+        String volver_al_menu = "";
 
         while(continuar){
             int leccion = 0;
@@ -86,7 +87,7 @@ public class Interfaz{
             mostrar_leccion(leccion_a_mostrar);
             try{
                 System.out.print("Desea seguir en la biblioteca? (Si/No):");
-                String volver_al_menu = "";
+                sn = new Scanner(System.in);
                 volver_al_menu = sn.nextLine();
                 System.out.println();
                 if((volver_al_menu.equals("No"))||(volver_al_menu.equals("NO"))||(volver_al_menu.equals("no"))){
