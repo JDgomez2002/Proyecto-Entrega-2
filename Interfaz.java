@@ -150,6 +150,7 @@ public class Interfaz{
                 System.out.print("Digite su opcion aqui: ");
                 opcion = sn.nextInt();
                 if((opcion>0) && (opcion<9)){
+                    opcion -= 1;
                     System.out.println("---------------------------------------------------------------------------------------------------------------------");
                     System.out.println();
                     siguiente = false;
@@ -188,6 +189,8 @@ public class Interfaz{
                 mostrar_leccion(leccion_a_mostrar);
             }
             else{
+                System.out.println();
+                System.out.println("\t Lo sentimos...");
                 System.out.println("\t Leccion no encontrada en la base de datos...");
                 System.out.println();
             }

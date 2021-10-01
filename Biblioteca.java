@@ -31,15 +31,22 @@ public class Biblioteca{
      * @version Biblioteca 1.1
      */
     public Biblioteca(){
+        ArrayList<String> info_separada = new ArrayList<String>();
         try{
             for(int k = 0; k<8; k++){
-                String numero_leccion = k+".txt";
+                String numero_leccion = k+"L.txt";
                 File myFile = new File(numero_leccion);
                 Scanner scan = new Scanner(myFile);
-                String info_archivo = scan.nextLine();
-                String[] info_separada = info_archivo.split(";");
-                Leccion leccion_n = new Leccion((k+1), info_separada[0], info_separada[1], info_separada[2]);
+
+                while(scan.hasNextLine()){
+                    String linea = scan.nextLine();
+                    info_separada.add(linea);
+                }
+            
+                Leccion leccion_n = new Leccion(k, info_separada.get(0), info_separada.get(1), info_separada.get(2));
                 lecciones.add(leccion_n);
+                info_separada.clear();
+
             }
         }
         catch(Exception e){
