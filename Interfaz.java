@@ -192,7 +192,7 @@ public class Interfaz{
             mostrar_pestana_buscar();
             String leccion_a_buscar = solicitar_leccion_a_buscar();
             Leccion leccion_a_mostrar = null;
-            leccion_a_mostrar = this.biblioteca.obtener_leccion_2(leccion_a_buscar);
+            leccion_a_mostrar = this.biblioteca.obtener_leccion(leccion_a_buscar);
             if(!(leccion_a_mostrar == null)){
                 mostrar_leccion(leccion_a_mostrar);
             }

@@ -11,6 +11,7 @@
 //Estuardo José Francisco Ayala Argueta 21315
 
 import java.util.ArrayList;
+import java.io.File;
 
  /**
   * Clase de Usuario con las variables necesarias
@@ -24,5 +25,67 @@ public class Usuario {
     private String genero;
     private String nivel_educativo;
     private String ocupacion;
-    private ArrayList<String> historial;
+    private ArrayList<String> historial = new ArrayList<String>();
+
+    /**
+     * Constructor.
+     * 
+     * @author Grupo 8
+     * @version Usuario 1.1
+     */
+    public Usuario(String nombre, String edad, String genero, String nivel, String ocupacion){
+      this.nombre = nombre;
+      this.edad = edad;
+      this.genero = genero;
+      this.nivel_educativo = nivel;
+      this.ocupacion = ocupacion;
+      String texto = "Sin Actividad.";
+      for(int k = 0; k<10 ;k++){
+        this.historial.add(texto);
+      }
+    }
+
+    /**
+     * Metodo toString para la informacion del usuario.
+     * 
+     * @author Grupo 8
+     * @version get_info_usuario 1.1
+     * @return String[]
+     */
+    public String[] get_info_usuario(){
+      String[] info = new String[5];
+      info[0] = this.nombre;
+      info[1] = this.edad;
+      info[2] = this.genero;
+      info[3] = this.nivel_educativo;
+      info[4] = this.ocupacion;
+      return info;
+    }
+
+    /**
+     * getter del historial del usuario.
+     * 
+     * @author Grupo 8
+     * @version get_info_usuario 1.1
+     * @return String[]
+     */
+    public ArrayList<String> get_historial(){
+      return this.historial;
+    }
+
+    /**
+     * actualiza el historial con una nueva leccion.
+     * retira la leccion mas antigua, de 10.
+     * 
+     * @author Grupo 8
+     * @version actualizar_historial 1.1
+     * @param Leccion
+     */
+    public void actualizar_historial(Leccion ultima_leccion){
+      if((this.historial.size())>=10){
+        this.historial.remove(0);
+      }
+      String titulo_ultima_leccion = ultima_leccion.get_titulo();
+      this.historial.add(titulo_ultima_leccion);
+    }
 }

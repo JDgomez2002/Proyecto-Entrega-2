@@ -100,7 +100,7 @@ public class Biblioteca{
      * @return Leccion
      * @param String
      */
-    public Leccion obtener_leccion_2(String string_usuario){
+    public Leccion obtener_leccion(String string_usuario){
         string_usuario = string_usuario.toLowerCase();
         boolean continuar = true;
         Leccion leccion_actual = null;
