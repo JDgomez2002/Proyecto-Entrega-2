@@ -22,11 +22,12 @@ public class MAIN {
         vista.bienvenida();
 
         while(continuar){
+            
             opcion_usuario = vista.menuOpciones();
             switch (opcion_usuario){
                 //Biblioteca
                 case 1:
-                    // System.out.println("Leccion "+biblioteca.obtener_leccion(7).get_nombre());
+                    
 
                     break;
 
