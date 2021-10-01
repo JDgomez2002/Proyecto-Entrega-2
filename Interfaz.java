@@ -95,7 +95,7 @@ public class Interfaz{
                 }
             }
             catch(Exception e){
-                continuar = false;
+                continuar = true;
             }
         }
         System.out.println();
@@ -139,6 +139,74 @@ public class Interfaz{
             }
         }
         return opcion;
+    }
+
+    public void buscar_leccion(){
+        boolean continuar = true;
+        String volver_al_menu = "";
+
+        while(continuar){
+            mostrar_pestana_buscar();
+            String leccion_a_buscar = solicitar_leccion_a_buscar();
+            Leccion leccion_a_mostrar = null;
+            leccion_a_mostrar = this.biblioteca.obtener_leccion_2(leccion_a_buscar);
+            if(!(leccion_a_mostrar == null)){
+                mostrar_leccion(leccion_a_mostrar);
+            }
+            else{
+                System.out.println("\t Leccion no encontrada en la base de datos...");
+                System.out.println();
+            }
+            try{
+                System.out.print("Desea seguir buscando? (Si/No): ");
+                sn = new Scanner(System.in);
+                volver_al_menu = sn.nextLine();
+                System.out.println();
+                if((volver_al_menu.equals("No"))||(volver_al_menu.equals("NO"))||(volver_al_menu.equals("no"))){
+                    continuar = false;
+                }
+            }
+            catch(Exception e){
+                continuar = true;
+            }
+        }
+        System.out.println();
+        System.out.println("- Regresando al menu...");
+        System.out.println();
+    }
+
+    public void mostrar_pestana_buscar(){
+        System.out.println();
+        System.out.println("------------ BUSCAR LECCION ------------");
+        System.out.println("- En esta pestana podras buscar lecciones por medio de su titulo.");
+        System.out.println("- Solo basta escribir el nombre de la leccion.");
+        System.out.println("- Sin embargo, tambien puedes buscarlas por palabras claves!");
+        System.out.println("- Que el aprendizaje nunca termine!!!");
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+    }
+
+    public String solicitar_leccion_a_buscar(){
+        boolean continuar = true;
+        String leccion_buscada = "";
+        while(continuar){
+            try{
+                System.out.println();
+                System.out.print("\t- Digite el nombre o palabra clave de la leccion que desea buscar: ");
+                sn = new Scanner(System.in);
+                leccion_buscada = sn.nextLine();
+                if(leccion_buscada.equals("")){
+                    System.out.println("\t\t- ERROR: digite un titulo de leccion valido.");
+                }
+                else{
+                    leccion_buscada = leccion_buscada.toLowerCase();
+                    continuar = false;
+                }
+            }
+            catch(Exception e){
+                System.out.println("\t\t- ERROR: digite un titulo de leccion valido.");
+            }
+        }
+        return leccion_buscada;   
     }
 
     public void mostrar_leccion(Leccion leccion_a_mostrar){

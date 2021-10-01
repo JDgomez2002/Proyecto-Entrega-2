@@ -10,6 +10,7 @@
 //Mario Antonio Guerra Morales 21008
 //Estuardo José Francisco Ayala Argueta 21315
 
+
 public class Controlador {
     
     public void Tututor(){
@@ -30,7 +31,7 @@ public class Controlador {
 
                 //Buscar_leccion
                 case 2:
-                    
+                    vista.buscar_leccion();
                     break;
 
                 //Simluador de examen de admision
@@ -55,7 +56,6 @@ public class Controlador {
                     break;
             
                 default:
-                    // vista.mostrar_mensaje_error_consola();
                     break;
             }
         }

@@ -76,13 +76,16 @@ public class Biblioteca{
         return leccion_actual;
     }
     
-    public Leccion obtener_leccion2(String titulo){
+    public Leccion obtener_leccion_2(String string_usuario){
+        string_usuario = string_usuario.toLowerCase();
         boolean continuar = true;
         Leccion leccion_actual = null;
         int contador = 0;
 
         while(continuar&&(contador<this.lecciones.size())){
-            if(titulo == (this.lecciones.get(contador).get_titulo())){
+            String titulo_leccion = this.lecciones.get(contador).get_titulo();
+            titulo_leccion = titulo_leccion.toLowerCase();
+            if(titulo_leccion.contains(string_usuario)){
                 leccion_actual = this.lecciones.get(contador);
                 continuar = false;
             }
