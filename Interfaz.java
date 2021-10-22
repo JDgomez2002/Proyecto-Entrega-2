@@ -11,6 +11,7 @@
 //Estuardo José Francisco Ayala Argueta 21315
 
 import java.util.Scanner;
+import java.util.function.DoubleToIntFunction;
 import java.time.LocalTime;
 
 /**
@@ -154,11 +155,23 @@ public class Interfaz{
                     System.out.println((i+1)+" "+this.biblioteca.get_lecciones().get(i).get_titulo());
                 }
                 System.out.println();
+                System.out.println("--- BIOLOGIA ---");
+                System.out.println();
+                for(int i = 8; i<11; i++){
+                    System.out.println((i+1)+" "+this.biblioteca.get_lecciones().get(i).get_titulo());
+                }
+                System.out.println();
+                System.out.println("--- COMUNICACION ---");
+                System.out.println();
+                for(int i = 11; i<14; i++){
+                    System.out.println((i+1)+" "+this.biblioteca.get_lecciones().get(i).get_titulo());
+                }
+                System.out.println();
                 System.out.println();
                 System.out.print("Digite su opcion aqui: ");
                 sn = new Scanner(System.in);
                 opcion = sn.nextInt();
-                if((opcion>0) && (opcion<9)){
+                if((opcion>0) && (opcion<15)){
                     opcion -= 1;
                     System.out.println("---------------------------------------------------------------------------------------------------------------------");
                     System.out.println();
@@ -363,4 +376,177 @@ public class Interfaz{
         System.out.println();
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
     }
+
+    public String[] acceder_cuenta(){
+        String[] info = new String[2];
+        try{
+            boolean continuar = true;
+            while(continuar){
+                System.out.println();
+                System.out.println("---------------------------------------------------------------------------------------------------------------------");
+                System.out.println("- Bienvenido a inicio de sesion...");
+                System.out.println("- Danos tu nombre se usuario y contrasena para acceder a tu usuario.");
+                System.out.print(" Digite su nombre de usuario: ");
+                this.sn = new Scanner(System.in);
+                String nombre = sn.nextLine();
+                if(!(nombre.equals(""))){
+                    System.out.print(" Digite su contrasena: ");
+                    this.sn = new Scanner(System.in);
+                    String contra = sn.nextLine();
+                    if(!(contra.equals(""))){
+                        info[0] = nombre;
+                        info[1] = contra;
+                        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+                        System.out.println();
+                        continuar = false;
+                    }
+                    else{
+                        System.out.println("\t- Error: digite un nombre o contrasena valida.");
+                    }
+                }
+                else{
+                    System.out.println("\t- Error: digite un nombre o contrasena valida.");
+                }
+            }
+        }
+        catch(Exception e){
+            System.out.println("\t- Error: digite un nombre o contrasena valida.");
+        }
+        return info;
+    }
+
+    public String[] get_info_usuario(){
+        String[] info = new String[7];
+        try{
+            boolean continuar = true;
+            while(continuar){
+                System.out.println();
+                System.out.println("---------------------------------------------------------------------------------------------------------------------");
+                System.out.println("- Bienvenido a crear un usuario...");
+                System.out.println("- Danos tu nombre, contrasena y toda tu informacion necesaria.");
+                System.out.print(" Digite su nombre de usuario: ");
+                this.sn = new Scanner(System.in);
+                String nombre = sn.nextLine();
+                if(!(nombre.equals(""))){
+                    System.out.print(" Digite su contrasena: ");
+                    this.sn = new Scanner(System.in);
+                    String contra = sn.nextLine();
+                    if(!(contra.equals(""))){
+                        System.out.print(" Digite su edad: ");
+                        this.sn = new Scanner(System.in);
+                        String edad = sn.nextLine();
+                        if(!(edad.equals(""))){
+                            System.out.print(" Digite su genero: ");
+                            this.sn = new Scanner(System.in);
+                            String gen = sn.nextLine();
+                            if(!(gen.equals(""))){
+                                System.out.print(" Digite su nivel educativo: ");
+                                this.sn = new Scanner(System.in);
+                                String nivel = sn.nextLine();
+                                if(!(nivel.equals(""))){
+                                    System.out.print(" Digite su ocupacion (estudiante, etc): ");
+                                    this.sn = new Scanner(System.in);
+                                    String ocup = sn.nextLine();
+                                    if(!(ocup.equals(""))){
+                                        System.out.print(" Digite su titulo universitario o carrera de estudio: ");
+                                        this.sn = new Scanner(System.in);
+                                        String titulo = sn.nextLine();
+                                        if(!(titulo.equals(""))){
+                                            info[0] = nombre;
+                                            info[1] = contra;
+                                            info[2] = edad;
+                                            info[3] = gen;
+                                            info[4] = nivel;
+                                            info[5] = ocup;
+                                            info[6] = titulo;
+                                            System.out.println("\t\t- Datos obtenidos con exito!!");
+                                            System.out.println("---------------------------------------------------------------------------------------------------------------------");
+                                            System.out.println();
+                                            continuar = false; 
+                                        }
+                                        else{
+                                            System.out.println("\t- Error: digite una edad valida.");
+                                        }
+                                        
+                                    }
+                                    else{
+                                        System.out.println("\t- Error: digite una edad valida.");
+                                    }
+                                    
+                                }
+                                else{
+                                    System.out.println("\t- Error: digite una edad valida.");
+                                }
+                                
+                            }
+                            else{
+                                System.out.println("\t- Error: digite una edad valida.");
+                            }
+                        }
+                        else{
+                            System.out.println("\t- Error: digite una edad valida.");
+                        }
+                    }
+                    else{
+                        System.out.println("\t- Error: digite un nombre o contrasena valida.");
+                    }
+                }
+                else{
+                    System.out.println("\t- Error: digite un nombre o contrasena valida.");
+                }
+            }
+        }
+        catch(Exception e){
+            System.out.println("\t- Error: digite datos validos.");
+        }
+        return info;
+    }
+
+    public int estudiante_o_profesor(){
+        int opcion = 0;
+        try{
+            boolean continuar = true;
+            while(continuar){
+                System.out.println("- Es estudiante o profesor?");
+                System.out.println(" Los estudiantes pueden estudiar y realizar examenes.");
+                System.out.println(" Los profesores pueden realizar examenes para los estudiantes.");
+                System.out.println("- Digite 1 para ser estudiante y 2 para ser profesor...");
+                System.out.print("Digite su opcion aqui: ");
+                sn = new Scanner(System.in);
+                opcion = sn.nextInt();
+                if((opcion>0) && (opcion<3)){
+                    System.out.println("---------------------------------------------------------------------------------------------------------------------");
+                    System.out.println();
+                    continuar = false;
+                } 
+                else{
+                    System.out.println();
+                    System.out.println("\t\tError: debe ser 1 o 2...");
+                    System.out.println();
+                }
+            }
+        }
+        catch(Exception e){
+            System.out.println("- Error: digite un numero valido.");
+        }
+        return opcion;
+    }
+
+    public void cuenta(){
+        System.out.println();
+        System.out.println();
+        System.out.println("------ TU CUENTA ------");
+        System.out.println("- En esta pestana podras acceder a tu cuenta o crear una nueva.");  
+    }
+
+    public void mostrar_info(Usuario user){
+        String[] info = user.get_info_usuario();
+        System.out.println("- INFORMACION DE USUARIO -");
+        System.out.println("Nombre: "+info[0]);
+        System.out.println("Edad: "+info[1]);
+        System.out.println("Genero: "+info[2]);
+        System.out.println("Nivel: "+info[3]);
+        System.out.println("Ocupacion: "+info[4]);
+    }
+
 }

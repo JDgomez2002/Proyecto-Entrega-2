@@ -11,7 +11,6 @@
 //Estuardo José Francisco Ayala Argueta 21315
 
 import java.util.ArrayList;
-import java.io.File;
 
  /**
   * Clase de Usuario con las variables necesarias
@@ -25,6 +24,7 @@ public class Usuario {
     private String genero;
     private String nivel_educativo;
     private String ocupacion;
+    private String contrasena;
     private ArrayList<String> historial = new ArrayList<String>();
 
     /**
@@ -33,7 +33,8 @@ public class Usuario {
      * @author Grupo 8
      * @version Usuario 1.1
      */
-    public Usuario(String nombre, String edad, String genero, String nivel, String ocupacion){
+    public Usuario(String nombre, String contra, String edad, String genero, String nivel, String ocupacion){
+      this.contrasena = contra;
       this.nombre = nombre;
       this.edad = edad;
       this.genero = genero;
@@ -87,5 +88,13 @@ public class Usuario {
       }
       String titulo_ultima_leccion = ultima_leccion.get_titulo();
       this.historial.add(titulo_ultima_leccion);
+    }
+
+    public String get_contra(){
+      return this.contrasena;
+    }
+
+    public String get_nombre(){
+      return this.nombre;
     }
 }

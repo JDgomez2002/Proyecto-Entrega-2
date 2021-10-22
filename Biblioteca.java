@@ -33,7 +33,7 @@ public class Biblioteca{
     public Biblioteca(){
         ArrayList<String> info_separada = new ArrayList<String>();
         try{
-            for(int k = 0; k<8; k++){
+            for(int k = 0; k<14; k++){
                 String numero_leccion = k+"L.txt";
                 File myFile = new File(numero_leccion);
                 Scanner scan = new Scanner(myFile);

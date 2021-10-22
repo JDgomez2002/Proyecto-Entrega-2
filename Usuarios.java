@@ -20,6 +20,34 @@ import java.util.ArrayList;
  */
 public class Usuarios {
     private ArrayList<Usuario> lista_usuarios = new ArrayList<Usuario>();
+    private Usuario usuario_actual;
+
+    public void acceder_cuenta(String nombre, String contra){
+        if(!(this.lista_usuarios.isEmpty())){
+            for(int k = 0; k<this.lista_usuarios.size() ;k++){
+                if((nombre.equals(this.lista_usuarios.get(k).get_nombre()))&&(contra.equals(this.lista_usuarios.get(k).get_contra()))){
+                    this.usuario_actual = lista_usuarios.get(k);
+                }
+            }
+        }
+    }
+
+    public void crear_usuario(int tipo_usuario, String[] info_usuario){
+        switch (tipo_usuario){
+            case 1: //estudiante
+                Estudiante estudiante = new Estudiante(info_usuario[0], info_usuario[1], info_usuario[2], info_usuario[3], info_usuario[4], info_usuario[5], info_usuario[6]);
+                agregar_usuarios(estudiante);
+                break;
+
+            case 2://profesor
+                Profesor profe = new Profesor(info_usuario[0], info_usuario[1], info_usuario[2], info_usuario[3], info_usuario[4], info_usuario[5], info_usuario[6]);
+                agregar_usuarios(profe);
+                break;
+        
+            default:
+                break;
+        }
+    }
 
     /**
      * Constructor Usuarios.
@@ -27,7 +55,11 @@ public class Usuarios {
      * @author Grupo 8
      * @version Usuarios 1.1
      */
-    public Usuarios(Usuario usuario){
+    public void agregar_usuarios(Usuario usuario){
         this.lista_usuarios.add(usuario);
+    }
+
+    public ArrayList<String> get_historial_usuario_actual(){
+        return this.usuario_actual.get_historial();
     }
 }
