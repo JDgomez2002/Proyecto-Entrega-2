@@ -76,7 +76,7 @@ public class Usuarios {
         return this.usuario_actual;
     }
 
-    public void set_usuario_actual_null(){
+    public void cerrar_sesion(){
         this.usuario_actual = null;
     }
 }
