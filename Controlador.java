@@ -26,6 +26,7 @@ public class Controlador {
      */
     public void Tututor(){
         Interfaz vista = new Interfaz();
+        Usuarios data = new Usuarios();
 
         boolean continuar = true;
         int opcion_usuario = 0;
@@ -57,7 +58,36 @@ public class Controlador {
 
                 //Mi cuenta
                 case 5:
-                    vista.mi_cuenta_no_disponible();
+                    //Crear usuario o iniciar sesion
+                    vista.cuenta();
+                    if(data.get_usuario_actual()==null){
+                        boolean continuar_sesion_cerrada = true;
+                        while(continuar_sesion_cerrada){
+                            int crear_usuario_o_iniciar_sesion = vista.acceder_o_crear_usuario();
+                            if(crear_usuario_o_iniciar_sesion==1){
+                                //crear usuario
+                                int estudiante_o_profesor = vista.estudiante_o_profesor();
+                                String[] datos_crear_usuario = vista.get_info_usuario();
+                                data.crear_usuario(estudiante_o_profesor, datos_crear_usuario);
+                                vista.usuario_creado_exito();
+                                continuar_sesion_cerrada = !(vista.volver_al_menu());
+                            }
+                            else{
+                                String[] datos_inicio_sesion = vista.solicitar_datos_acceder_cuenta();
+                                String nombre_sesion = datos_inicio_sesion[0];
+                                String contra_sesion = datos_inicio_sesion[1];
+                                boolean accedio = data.acceder_cuenta(nombre_sesion, contra_sesion);
+                                vista.inicio_sesion(accedio);
+                                continuar_sesion_cerrada = !(vista.volver_al_menu());
+                            }
+                        }
+                        vista.volvinedo_al_menu();
+                    }
+                    //menu usuario
+                    else{
+                        
+                    }
+                    // vista.mi_cuenta_no_disponible();
                     break;
 
                 //finalizar programa

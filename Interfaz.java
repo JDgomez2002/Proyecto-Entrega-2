@@ -549,4 +549,128 @@ public class Interfaz{
         System.out.println("Ocupacion: "+info[4]);
     }
 
+    public String[] solicitar_datos_acceder_cuenta(){
+        String[] datos = new String[2];
+        System.out.println("---- Iniciar sesion ----");
+        System.out.println("- Para ingresar sesion debe de escribir su nombre de usuario y contrasena");
+        System.out.print("- Ingrese su nombre de usuario: ");
+        String nombre = solicitar_string();
+        System.out.print("- Ingrese su contrasena: ");
+        String contrasena = solicitar_string();
+        datos[0] = nombre;
+        datos[1] = contrasena;
+        return datos;
+    }
+
+    public int acceder_o_crear_usuario(){
+        System.out.println("--- No tienes una sesion iniciada ---");
+        System.out.println("- Crea una cuenta o inicia sesion con una cuenta existente.");
+        System.out.print("Digita 1 para crear una cuenta o 2 para iniciar sesion: ");
+        int desicion = solicitar_int(1, 2);
+        return desicion;
+    }
+
+    // public String[] solicitar_info_crear_usuario(){
+    //     String[] datos = new String[2];
+    //     System.out.println("-- CREAR USUARIO --");
+    //     System.out.println("- Para crear su usuario debe de darnos un nombre y una contrasena.");
+    //     System.out.print("\tDigite su nombre: ");
+    //     String nombre = solicitar_string();
+    //     System.out.print("\tDigite su contrasena: ");
+    //     String contra = solicitar_string();
+    //     datos[0] = nombre;
+    //     datos[1] = contra;
+    //     System.out.println("- Perfecto! hemos creado tu nuevo usuario!");
+    //     return datos;
+    // }
+
+    public String solicitar_string(){
+        String txt = "";
+        try{
+            boolean continuar = true;
+            while(continuar){
+                this.sn = new Scanner(System.in);
+                String texto = sn.nextLine();
+                if(texto.equals("")){
+                    System.out.println("\t Error: debe de ingresar un texto valido.");
+                }
+                else{
+                    txt = texto;
+                    System.out.println("---------------------------------------------------------------------------------------------------------------------");
+                    continuar = false;                   
+                }
+            }
+        }
+        catch(Exception e){
+            System.out.println("\t Error: debe de ingresar un texto valido.");
+        }
+        return txt;
+    }
+
+    public int solicitar_int(int inferior, int superior){
+        inferior -= 1;
+        superior += 1;
+        int entero = 0;
+        try{
+            boolean continuar = true;
+            while(continuar){
+                this.sn = new Scanner(System.in);
+                int numero = sn.nextInt();
+                if((numero>inferior)&&(numero<superior)){
+                    entero = numero;
+                    System.out.println("---------------------------------------------------------------------------------------------------------------------");
+                    continuar = false; 
+                }
+                else{
+                    System.out.println("\t Error: debe de ingresar un entero valido.");                  
+                }
+            }
+        }
+        catch(Exception e){
+            System.out.println("\t Error: debe de ingresar un entero valido.");
+        }
+        return entero;
+    }
+
+    public void usuario_creado_exito(){
+        System.out.println();
+        System.out.println("\t\tSu usuario ha sido creado con exito.");
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+    }
+
+    public void volvinedo_al_menu(){
+        System.out.println();
+        System.out.println("\t\tVolviendo al Menu");
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+    }
+
+    public void inicio_sesion(boolean inicio_o_no){
+        if(inicio_o_no){
+            System.out.println();
+            System.out.println("\t\tEXITO! se ha iniciado su sesion.");
+            System.out.println();
+        }
+        else{
+            System.out.println();
+            System.out.println("\t\tLo sentimos, nombre o contrasena incorrectas...");
+            System.out.println();
+        }
+    }
+    
+    public boolean volver_al_menu(){
+        boolean regresar_al_menu = false;
+        System.out.println();
+        System.out.print("- Desea volver al menu? (si/no): ");
+        String regresar = solicitar_string();
+        System.out.println();
+        regresar = regresar.toLowerCase();
+        if(regresar.equals("si")){
+            regresar_al_menu = true;
+        }
+        return regresar_al_menu;
+    }
+
+    
 }

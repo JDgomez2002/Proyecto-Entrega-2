@@ -20,16 +20,25 @@ import java.util.ArrayList;
  */
 public class Usuarios {
     private ArrayList<Usuario> lista_usuarios = new ArrayList<Usuario>();
-    private Usuario usuario_actual;
+    private Usuario usuario_actual = null;
 
-    public void acceder_cuenta(String nombre, String contra){
+    public boolean acceder_cuenta(String nombre, String contra){
+        boolean usuario_accedido = false;
         if(!(this.lista_usuarios.isEmpty())){
-            for(int k = 0; k<this.lista_usuarios.size() ;k++){
-                if((nombre.equals(this.lista_usuarios.get(k).get_nombre()))&&(contra.equals(this.lista_usuarios.get(k).get_contra()))){
-                    this.usuario_actual = lista_usuarios.get(k);
+            boolean continuar = true;
+            int contador = 0;
+            while((continuar)&&(contador<this.lista_usuarios.size())){
+                if((nombre.equals(this.lista_usuarios.get(contador).get_nombre()))&&(contra.equals(this.lista_usuarios.get(contador).get_contra()))){
+                    this.usuario_actual = lista_usuarios.get(contador);
+                    usuario_accedido = true;
+                    continuar = false;
+                }
+                else{
+                    contador += 1;
                 }
             }
         }
+        return usuario_accedido;
     }
 
     public void crear_usuario(int tipo_usuario, String[] info_usuario){
@@ -61,5 +70,13 @@ public class Usuarios {
 
     public ArrayList<String> get_historial_usuario_actual(){
         return this.usuario_actual.get_historial();
+    }
+
+    public Usuario get_usuario_actual() {
+        return this.usuario_actual;
+    }
+
+    public void set_usuario_actual_null(){
+        this.usuario_actual = null;
     }
 }
