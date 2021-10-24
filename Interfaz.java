@@ -10,7 +10,7 @@
 //Mario Antonio Guerra Morales 21008
 //Estuardo José Francisco Ayala Argueta 21315
 
-import java.util.Scanner;
+import java.util.*;
 import java.time.LocalTime;
 
 /**
@@ -59,7 +59,7 @@ public class Interfaz{
         boolean siguiente = true;
         int opcion = 0;
         while(siguiente){
-            try {
+            try{
                 System.out.println();
                 System.out.println("------------ MENU PRINCIPAL ------------");
                 System.out.println();
@@ -100,16 +100,17 @@ public class Interfaz{
      * @author Grupo 8
      * @version biblioteca 1.1
      */
-    public void biblioteca(){
+    public ArrayList<Leccion> biblioteca(){
         boolean continuar = true;
         String volver_al_menu = "";
-
+        ArrayList<Leccion> lecciones_visitadas = new ArrayList<Leccion>();
+        Leccion leccion_a_mostrar = null;
         while(continuar){
             int leccion = 0;
             leccion = indice_leccion_biblioteca();
-            Leccion leccion_a_mostrar = null;
             leccion_a_mostrar = this.biblioteca.obtener_leccion(leccion);
             mostrar_leccion(leccion_a_mostrar);
+            lecciones_visitadas.add(leccion_a_mostrar);
             try{
                 System.out.print("\t\tDesea seguir en la biblioteca? (Si/No): ");
                 sn = new Scanner(System.in);
@@ -126,6 +127,7 @@ public class Interfaz{
         System.out.println();
         System.out.println("- Regresando al menu...");
         System.out.println();
+        return lecciones_visitadas;
     }
 
     /**
@@ -197,17 +199,18 @@ public class Interfaz{
      * @author Grupo 8
      * @version buscar_leccion 1.1
      */
-    public void buscar_leccion(){
+    public ArrayList<Leccion> buscar_leccion(){
         boolean continuar = true;
         String volver_al_menu = "";
-
+        ArrayList<Leccion> lecciones_buscadas = new ArrayList<Leccion>();
+        Leccion leccion_a_mostrar = null;
         while(continuar){
             mostrar_pestana_buscar();
             String leccion_a_buscar = solicitar_leccion_a_buscar();
-            Leccion leccion_a_mostrar = null;
             leccion_a_mostrar = this.biblioteca.obtener_leccion(leccion_a_buscar);
             if(!(leccion_a_mostrar == null)){
                 mostrar_leccion(leccion_a_mostrar);
+                lecciones_buscadas.add(leccion_a_mostrar);
             }
             else{
                 System.out.println();
@@ -231,6 +234,7 @@ public class Interfaz{
         System.out.println();
         System.out.println("- Regresando al menu...");
         System.out.println();
+        return lecciones_buscadas;
     }
 
     /**
@@ -380,24 +384,8 @@ public class Interfaz{
      */
     public void historial_no_disponible(){
         System.out.println();
-        System.out.println("\t\t- Lo sentimos, el historial de sus lecciones aun no esta disponible...");
-        System.out.println("\t\t- Estara disponible en la FASE 03 del Proyecto POO 2021.");
-        System.out.println();
-        System.out.println("\t\t- Regresando al Menu...");
-        System.out.println();
-        System.out.println("---------------------------------------------------------------------------------------------------------------------");
-    }
-
-    /**
-     * Mensaje informativo para el usuario.
-     * 
-     * @author Grupo 8
-     * @version mi_cuenta_no_disponible 1.1
-     */
-    public void mi_cuenta_no_disponible(){
-        System.out.println();
-        System.out.println("\t\t- Lo sentimos, su cuenta aun no esta disponible...");
-        System.out.println("\t\t- Estara disponible en la FASE 03 del Proyecto POO 2021.");
+        System.out.println("\t\t- Lo sentimos, el historial de sus lecciones no esta disponible porque no ha iniciado sesion...");
+        System.out.println("\t\t- Inicie sesion para tener acceso a su historial.");
         System.out.println();
         System.out.println("\t\t- Regresando al Menu...");
         System.out.println();
@@ -536,8 +524,9 @@ public class Interfaz{
             while(continuar){
                 System.out.println("- Es estudiante o profesor?");
                 System.out.println(" Los estudiantes pueden estudiar y realizar examenes.");
-                System.out.println(" Los profesores pueden realizar examenes para los estudiantes.");
+                System.out.println(" Los profesores pueden crear examenes para los estudiantes.");
                 System.out.println("- Digite 1 para ser estudiante y 2 para ser profesor...");
+                System.out.println();
                 System.out.print("Digite su opcion aqui: ");
                 sn = new Scanner(System.in);
                 opcion = sn.nextInt();
@@ -560,8 +549,6 @@ public class Interfaz{
     }
 
     public void cuenta(){
-        System.out.println();
-        System.out.println();
         System.out.println("------ TU CUENTA ------");
         System.out.println("- En esta pestana podras acceder a tu cuenta o crear una nueva.");  
     }
@@ -578,8 +565,11 @@ public class Interfaz{
 
     public String[] solicitar_datos_acceder_cuenta(){
         String[] datos = new String[2];
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
         System.out.println("---- Iniciar sesion ----");
         System.out.println("- Para ingresar sesion debe de escribir su nombre de usuario y contrasena");
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
         System.out.print("- Ingrese su nombre de usuario: ");
         String nombre = solicitar_string();
         System.out.print("- Ingrese su contrasena: ");
@@ -590,26 +580,14 @@ public class Interfaz{
     }
 
     public int acceder_o_crear_usuario(){
+        System.out.println();
         System.out.println("--- No tienes una sesion iniciada ---");
         System.out.println("- Crea una cuenta o inicia sesion con una cuenta existente.");
+        System.out.println();
         System.out.print("Digita 1 para crear una cuenta o 2 para iniciar sesion: ");
         int desicion = solicitar_int(1, 2);
         return desicion;
     }
-
-    // public String[] solicitar_info_crear_usuario(){
-    //     String[] datos = new String[2];
-    //     System.out.println("-- CREAR USUARIO --");
-    //     System.out.println("- Para crear su usuario debe de darnos un nombre y una contrasena.");
-    //     System.out.print("\tDigite su nombre: ");
-    //     String nombre = solicitar_string();
-    //     System.out.print("\tDigite su contrasena: ");
-    //     String contra = solicitar_string();
-    //     datos[0] = nombre;
-    //     datos[1] = contra;
-    //     System.out.println("- Perfecto! hemos creado tu nuevo usuario!");
-    //     return datos;
-    // }
 
     public String solicitar_string(){
         String txt = "";
@@ -661,14 +639,14 @@ public class Interfaz{
 
     public void usuario_creado_exito(){
         System.out.println();
-        System.out.println("\t\tSu usuario ha sido creado con exito.");
+        System.out.println("\t\tSu usuario ha sido creado con exito...");
         System.out.println();
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
     }
 
     public void volvinedo_al_menu(){
         System.out.println();
-        System.out.println("\t\tVolviendo al Menu");
+        System.out.println("\t\tVolviendo al Menu...");
         System.out.println();
         System.out.println("---------------------------------------------------------------------------------------------------------------------");
     }
@@ -676,7 +654,7 @@ public class Interfaz{
     public void inicio_sesion(boolean inicio_o_no){
         if(inicio_o_no){
             System.out.println();
-            System.out.println("\t\tEXITO! se ha iniciado su sesion.");
+            System.out.println("\t\tEXITO! se ha iniciado su sesion...");
             System.out.println();
         }
         else{
@@ -699,7 +677,78 @@ public class Interfaz{
         return regresar_al_menu;
     }
 
-    public int Biologia(){
+    public int mostrar_menu_usuario(Usuarios users){
+        System.out.println();
+        System.out.println("--- MENU DE USUARIO ---");
+        System.out.println("- Bienvenido al menu de usuario.");
+        System.out.println("- Aqui puedes ver o modificar tus datos de usuario.");
+        System.out.println("- Tambien puedes cerrar sesion si asi lo deseas.");
+        System.out.println();
+        String[] info = users.get_usuario_actual().get_info_usuario();
+        System.out.println("-- Informacion de usuario --");
+        for(int k = 0; k<info.length ;k++){
+            switch (k) {
+                case 0:
+                    System.out.print("Nombre: ");
+                    break;
+
+                case 1:
+                    System.out.print("Edad: ");
+                    break;
+
+                case 2:
+                    System.out.print("Genero: ");
+                    break;
+
+                case 3:
+                    System.out.print("Nivel Educativo: ");
+                    break;
+
+                case 4:
+                    System.out.print("Ocupacion: ");
+                    break;
+
+                default:
+                    break;
+            }
+            System.out.println(info[k]);
+        }
+        System.out.println();
+        System.out.println(" 1. Modificar datos de usuario.");
+        System.out.println(" 2. Cerrar sesion.");
+        System.out.print("\tIngrese su desision aqui: ");
+        int desicion = solicitar_int(1, 2);
+        return desicion;
+    }
+
+
+    public void cerrar_sesion(){
+        System.out.println();
+        System.out.println("- Cerrrando sesion...");
+        System.out.println();
+    }
+
+    public void modificar_datos_usuario(){
+        System.out.println();
+        System.out.println("--- Modificar datos de tu cuenta! ---");
+        System.out.println("- Para comenzar, danos tus nuevos datos...");
+        System.out.println();
+    }
+
+    public void historial(ArrayList<String> historial){
+        
+        System.out.println("--- HISTORIAL ---");
+        for(int k = (historial.size()-1); k>=0 ;k--){
+            System.out.println(historial.get(k));
+        }
+        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+        System.out.println();
+        volvinedo_al_menu();
+    }
+
+    //---------------------------------------------------------------------------
+
+    public int biologia(){
         if(opcion2 == 1){
             Preguntas[] preguntas = {
                 new Preguntas("1. Las mitocondrias son orgánulos celulares cuya función principal es:\n", new Respuestas[] {
@@ -741,4 +790,5 @@ public class Interfaz{
         }
         return opcion2;
     }
+
 }

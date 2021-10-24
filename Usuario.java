@@ -40,7 +40,7 @@ public class Usuario {
       this.genero = genero;
       this.nivel_educativo = nivel;
       this.ocupacion = ocupacion;
-      String texto = "Sin Actividad.";
+      String texto = "Sin Actividad";
       for(int k = 0; k<10 ;k++){
         this.historial.add(texto);
       }
@@ -83,11 +83,11 @@ public class Usuario {
      * @param Leccion
      */
     public void actualizar_historial(Leccion ultima_leccion){
-      if((this.historial.size())>=10){
-        this.historial.remove(0);
-      }
       String titulo_ultima_leccion = ultima_leccion.get_titulo();
       this.historial.add(titulo_ultima_leccion);
+      if((this.historial.size())>10){
+        this.historial.remove(0);
+      }
     }
 
     public String get_contra(){

@@ -48,12 +48,9 @@ public class Usuarios {
                 agregar_usuarios(estudiante);
                 break;
 
-            case 2://profesor
+            default://profesor
                 Profesor profe = new Profesor(info_usuario[0], info_usuario[1], info_usuario[2], info_usuario[3], info_usuario[4], info_usuario[5], info_usuario[6]);
                 agregar_usuarios(profe);
-                break;
-        
-            default:
                 break;
         }
     }
@@ -78,5 +75,19 @@ public class Usuarios {
 
     public void cerrar_sesion(){
         this.usuario_actual = null;
+    }
+
+    public void modificar_usuario(int tipo_usuario, String[] info_usuario){
+        switch (tipo_usuario){
+            case 1: //estudiante
+                Estudiante estudiante = new Estudiante(info_usuario[0], info_usuario[1], info_usuario[2], info_usuario[3], info_usuario[4], info_usuario[5], info_usuario[6]);
+                this.usuario_actual = estudiante;
+                break;
+
+            default://profesor
+                Profesor profe = new Profesor(info_usuario[0], info_usuario[1], info_usuario[2], info_usuario[3], info_usuario[4], info_usuario[5], info_usuario[6]);
+                this.usuario_actual = profe;
+                break;
+        }
     }
 }

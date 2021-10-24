@@ -10,6 +10,8 @@
 //Mario Antonio Guerra Morales 21008
 //Estuardo José Francisco Ayala Argueta 21315
 
+import java.util.ArrayList;
+
 /**
  * Clase Controlador.
  * 
@@ -40,23 +42,39 @@ public class Controlador {
             switch (opcion_usuario){
                 //Biblioteca
                 case 1:
-                    vista.biblioteca();
+                    ArrayList<Leccion> ultimas_lecciones_biblioteca = vista.biblioteca();
+                    if((!(data.get_usuario_actual()==null))&&(!(ultimas_lecciones_biblioteca==null))){
+                        for(int k = (ultimas_lecciones_biblioteca.size()-1); k>=0 ;k--){
+                            data.get_usuario_actual().actualizar_historial(ultimas_lecciones_biblioteca.get(k));
+                        }
+                    }
                     break;
 
                 //Buscar_leccion
                 case 2:
-                    vista.buscar_leccion();
+                    ArrayList<Leccion> ultimas_lecciones_buscar = vista.buscar_leccion();
+                    if((!(data.get_usuario_actual()==null))&&(!(ultimas_lecciones_buscar==null))){
+                        for(int k = (ultimas_lecciones_buscar.size()-1); k>=0 ;k--){
+                            data.get_usuario_actual().actualizar_historial(ultimas_lecciones_buscar.get(k));
+                        }
+                    }
                     break;
 
                 //Simluador de examen de admision
                 case 3:
                     vista.simuladores();
-                    opcion2 = vista.Biologia();
+                    opcion2 = vista.biologia();
                     break;
 
                 //Historial de lecciones
                 case 4:
-                    vista.historial_no_disponible();
+                    if(!(data.get_usuario_actual()==null)){
+                        ArrayList<String> historial = data.get_usuario_actual().get_historial();
+                        vista.historial(historial);
+                    }
+                    else{
+                        vista.historial_no_disponible();
+                    }
                     break;
 
                 //Mi cuenta
@@ -73,7 +91,7 @@ public class Controlador {
                                 String[] datos_crear_usuario = vista.get_info_usuario();
                                 data.crear_usuario(estudiante_o_profesor, datos_crear_usuario);
                                 vista.usuario_creado_exito();
-                                continuar_sesion_cerrada = !(vista.volver_al_menu());
+                                continuar_sesion_cerrada = false;
                             }
                             else{
                                 String[] datos_inicio_sesion = vista.solicitar_datos_acceder_cuenta();
@@ -81,16 +99,30 @@ public class Controlador {
                                 String contra_sesion = datos_inicio_sesion[1];
                                 boolean accedio = data.acceder_cuenta(nombre_sesion, contra_sesion);
                                 vista.inicio_sesion(accedio);
-                                continuar_sesion_cerrada = !(vista.volver_al_menu());
+                                continuar_sesion_cerrada = false;
                             }
                         }
                         vista.volvinedo_al_menu();
                     }
                     //menu usuario
                     else{
-                        
+                        int modificar_o_cerrar_sesion = vista.mostrar_menu_usuario(data);
+                        if(modificar_o_cerrar_sesion==1){
+                            //modificar info
+                            vista.modificar_datos_usuario();
+                            int estudiante_o_profesor = vista.estudiante_o_profesor();
+                            String[] datos_crear_usuario = vista.get_info_usuario();
+                            data.modificar_usuario(estudiante_o_profesor, datos_crear_usuario);
+                            vista.usuario_creado_exito();
+                            vista.volvinedo_al_menu();
+                        }
+                        else{
+                            //cerrar sesion
+                            data.cerrar_sesion();
+                            vista.cerrar_sesion();
+                            vista.volvinedo_al_menu();
+                        }
                     }
-                    // vista.mi_cuenta_no_disponible();
                     break;
 
                 //finalizar programa
