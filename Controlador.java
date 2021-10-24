@@ -30,6 +30,8 @@ public class Controlador {
 
         boolean continuar = true;
         int opcion_usuario = 0;
+        int opcion = 0;
+        int opcion2 = 0;
 
         vista.bienvenida();
 
@@ -48,7 +50,8 @@ public class Controlador {
 
                 //Simluador de examen de admision
                 case 3:
-                    vista.simulador_no_disponible();
+                    vista.simuladores();
+                    opcion2 = vista.Biologia();
                     break;
 
                 //Historial de lecciones

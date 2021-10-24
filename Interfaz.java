@@ -11,7 +11,6 @@
 //Estuardo José Francisco Ayala Argueta 21315
 
 import java.util.Scanner;
-import java.util.function.DoubleToIntFunction;
 import java.time.LocalTime;
 
 /**
@@ -23,6 +22,7 @@ import java.time.LocalTime;
 public class Interfaz{
     private Scanner sn = new Scanner(System.in);
     private Biblioteca biblioteca = new Biblioteca();
+    private int opcion2 = 0;
 
     /**
      * Bienvenida al usuario.
@@ -335,15 +335,42 @@ public class Interfaz{
      * @author Grupo 8
      * @version simulador_no_disponible 1.1
      */
-    public void simulador_no_disponible(){
-        System.out.println();
-        System.out.println("\t\t- Lo sentimos, el simulador de examen aun no esta disponible...");
-        System.out.println("\t\t- Estara disponible en la FASE 03 del Proyecto POO 2021.");
-        System.out.println();
-        System.out.println("\t\t- Regresando al Menu...");
-        System.out.println();
-        System.out.println("---------------------------------------------------------------------------------------------------------------------");
+    public int simuladores(){
+        boolean cuestionario = true;
+        while(cuestionario){
+            try {
+                System.out.println();
+                System.out.println("------------ Simuladores ------------");
+                System.out.println();
+                System.out.println("1. Biologia");
+                System.out.println("2. Matematica");
+                System.out.println("3. Fisica");
+                System.out.println("4. Lenguaje");
+                System.out.println();
+                System.out.print("Digite su opcion aqui: ");
+                sn = new Scanner(System.in);
+                opcion2 = sn.nextInt();
+                if((opcion2>0) && (opcion2<5)){
+                    System.out.println("---------------------------------------------------------------------------------------------------------------------");
+                    System.out.println();
+                    cuestionario = false;
+                }
+                else{
+                    System.out.println();
+                    System.out.println("\t\tError: ingrese un numero del 1 al 4");
+                    System.out.println();
+                }
+            } catch (Exception e) {
+                System.out.println();
+                System.out.println("\t\tError: ingrese un numero valido");
+                System.out.println();
+                sn.next();
+            }
+        }
+        return opcion2;
     }
+
+    
 
     /**
      * Mensaje informativo para el usuario.
@@ -672,5 +699,46 @@ public class Interfaz{
         return regresar_al_menu;
     }
 
-    
+    public int Biologia(){
+        if(opcion2 == 1){
+            Preguntas[] preguntas = {
+                new Preguntas("1. Las mitocondrias son orgánulos celulares cuya función principal es:\n", new Respuestas[] {
+                    new Respuestas("La Fotosintesis", 'a', false),
+                    new Respuestas("La respiracion celular", 'b', true),
+                    new Respuestas("La mitosis", 'c', false),
+                    new Respuestas("La sistesis de proteinas", 'd', false)
+                }),
+                new Preguntas("2. La cromatina es:\n", new Respuestas[] {
+                    new Respuestas("El componente esencial del nucleolo", 'a', false),
+                    new Respuestas("Cada una de las partes de un cromosoma", 'b', false),
+                    new Respuestas("Fibras de ARN asociadas a proteínas", 'c', false),
+                    new Respuestas("Fibras de ADN empaquetadas con histonas", 'd', true)
+                }),
+                new Preguntas("3. Tanto las células vegetales como las animales contienen:\n", new Respuestas[] {
+                    new Respuestas("Ribosomas, paredes celulares y mitocondrias", 'a', false),
+                    new Respuestas("Aparato de Golgi, paredes celulares y ribosomas", 'b', false),
+                    new Respuestas("Aparato de Golgi, ribosomas y mitocondrias", 'c', true),
+                    new Respuestas("Cloroplastos, membranas celulares y mitocondrias", 'd', false)
+                }),
+                new Preguntas("4. Una característica esencial de la respiración celular es que:\n", new Respuestas[] {
+                    new Respuestas("Siempre requiere oxígeno", 'a', false),
+                    new Respuestas("Genera 2 ATP por molécula de glucosa", 'b', true),
+                    new Respuestas("Sus productos finales son inorgánicos", 'c', true),
+                    new Respuestas("A y C son correctas", 'd', true)
+                }),
+                new Preguntas("5. El reino Fungi y el reino Animal tienen en común las siguientes características:\n", new Respuestas[] {
+                    new Respuestas("Son eucariotas y autótrofos", 'a', false),
+                    new Respuestas("Son eucariotas y heterótrofos", 'b', true),
+                    new Respuestas("Son procariotas y autótrofos", 'c', false),
+                    new Respuestas("Son procariotas y heterótrofos", 'd', false)
+                }),
+
+            };
+
+            for (Preguntas p: preguntas) {
+                p.preguntar();
+            }
+        }
+        return opcion2;
+    }
 }
