@@ -116,10 +116,13 @@ public class Controlador {
                             vista.usuario_creado_exito();
                             vista.volvinedo_al_menu();
                         }
-                        else{
+                        else if(modificar_o_cerrar_sesion==2){
                             //cerrar sesion
                             data.cerrar_sesion();
                             vista.cerrar_sesion();
+                            vista.volvinedo_al_menu();
+                        }
+                        else{
                             vista.volvinedo_al_menu();
                         }
                     }

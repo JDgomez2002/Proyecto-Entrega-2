@@ -716,8 +716,9 @@ public class Interfaz{
         System.out.println();
         System.out.println(" 1. Modificar datos de usuario.");
         System.out.println(" 2. Cerrar sesion.");
+        System.out.println(" 3. Volver al menu.");
         System.out.print("\tIngrese su desision aqui: ");
-        int desicion = solicitar_int(1, 2);
+        int desicion = solicitar_int(1, 3);
         return desicion;
     }
 
