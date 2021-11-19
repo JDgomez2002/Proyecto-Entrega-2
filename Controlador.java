@@ -62,8 +62,11 @@ public class Controlador {
 
                 //Simluador de examen de admision
                 case 3:
-                    vista.simuladores();
-                    opcion2 = vista.biologia();
+                    opcion2 = vista.simuladores();
+                    vista.biologia();
+                    vista.matematica();
+                    vista.fisica();
+                    vista.lenguaje();
                     break;
 
                 //Historial de lecciones
