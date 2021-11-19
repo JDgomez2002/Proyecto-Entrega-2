@@ -792,4 +792,132 @@ public class Interfaz{
         return opcion2;
     }
 
+    public int matemarica(){
+        if(opcion2 == 2){
+            Preguntas[] preguntas = {
+                new Preguntas("1. Las mitocondrias son orgánulos celulares cuya función principal es:\n", new Respuestas[] {
+                    new Respuestas("La Fotosintesis", 'a', false),
+                    new Respuestas("La respiracion celular", 'b', true),
+                    new Respuestas("La mitosis", 'c', false),
+                    new Respuestas("La sistesis de proteinas", 'd', false)
+                }),
+                new Preguntas("2. La cromatina es:\n", new Respuestas[] {
+                    new Respuestas("El componente esencial del nucleolo", 'a', false),
+                    new Respuestas("Cada una de las partes de un cromosoma", 'b', false),
+                    new Respuestas("Fibras de ARN asociadas a proteínas", 'c', false),
+                    new Respuestas("Fibras de ADN empaquetadas con histonas", 'd', true)
+                }),
+                new Preguntas("3. Tanto las células vegetales como las animales contienen:\n", new Respuestas[] {
+                    new Respuestas("Ribosomas, paredes celulares y mitocondrias", 'a', false),
+                    new Respuestas("Aparato de Golgi, paredes celulares y ribosomas", 'b', false),
+                    new Respuestas("Aparato de Golgi, ribosomas y mitocondrias", 'c', true),
+                    new Respuestas("Cloroplastos, membranas celulares y mitocondrias", 'd', false)
+                }),
+                new Preguntas("4. Una característica esencial de la respiración celular es que:\n", new Respuestas[] {
+                    new Respuestas("Siempre requiere oxígeno", 'a', false),
+                    new Respuestas("Genera 2 ATP por molécula de glucosa", 'b', true),
+                    new Respuestas("Sus productos finales son inorgánicos", 'c', true),
+                    new Respuestas("A y C son correctas", 'd', true)
+                }),
+                new Preguntas("5. El reino Fungi y el reino Animal tienen en común las siguientes características:\n", new Respuestas[] {
+                    new Respuestas("Son eucariotas y autótrofos", 'a', false),
+                    new Respuestas("Son eucariotas y heterótrofos", 'b', true),
+                    new Respuestas("Son procariotas y autótrofos", 'c', false),
+                    new Respuestas("Son procariotas y heterótrofos", 'd', false)
+                }),
+
+            };
+
+            for (Preguntas p: preguntas) {
+                p.preguntar();
+            }
+        }
+        return opcion2;
+    }
+
+    public int fisica(){
+        if(opcion2 == 1){
+            Preguntas[] preguntas = {
+                new Preguntas("1. Las mitocondrias son orgánulos celulares cuya función principal es:\n", new Respuestas[] {
+                    new Respuestas("La Fotosintesis", 'a', false),
+                    new Respuestas("La respiracion celular", 'b', true),
+                    new Respuestas("La mitosis", 'c', false),
+                    new Respuestas("La sistesis de proteinas", 'd', false)
+                }),
+                new Preguntas("2. La cromatina es:\n", new Respuestas[] {
+                    new Respuestas("El componente esencial del nucleolo", 'a', false),
+                    new Respuestas("Cada una de las partes de un cromosoma", 'b', false),
+                    new Respuestas("Fibras de ARN asociadas a proteínas", 'c', false),
+                    new Respuestas("Fibras de ADN empaquetadas con histonas", 'd', true)
+                }),
+                new Preguntas("3. Tanto las células vegetales como las animales contienen:\n", new Respuestas[] {
+                    new Respuestas("Ribosomas, paredes celulares y mitocondrias", 'a', false),
+                    new Respuestas("Aparato de Golgi, paredes celulares y ribosomas", 'b', false),
+                    new Respuestas("Aparato de Golgi, ribosomas y mitocondrias", 'c', true),
+                    new Respuestas("Cloroplastos, membranas celulares y mitocondrias", 'd', false)
+                }),
+                new Preguntas("4. Una característica esencial de la respiración celular es que:\n", new Respuestas[] {
+                    new Respuestas("Siempre requiere oxígeno", 'a', false),
+                    new Respuestas("Genera 2 ATP por molécula de glucosa", 'b', true),
+                    new Respuestas("Sus productos finales son inorgánicos", 'c', true),
+                    new Respuestas("A y C son correctas", 'd', true)
+                }),
+                new Preguntas("5. El reino Fungi y el reino Animal tienen en común las siguientes características:\n", new Respuestas[] {
+                    new Respuestas("Son eucariotas y autótrofos", 'a', false),
+                    new Respuestas("Son eucariotas y heterótrofos", 'b', true),
+                    new Respuestas("Son procariotas y autótrofos", 'c', false),
+                    new Respuestas("Son procariotas y heterótrofos", 'd', false)
+                }),
+
+            };
+
+            for (Preguntas p: preguntas) {
+                p.preguntar();
+            }
+        }
+        return opcion2;
+    }
+
+    public int lenguaje(){
+        if(opcion2 == 1){
+            Preguntas[] preguntas = {
+                new Preguntas("1. Pedro le dice a Tadeo si quiere desayunar huevo, ¿quien es el receptor?\n", new Respuestas[] {
+                    new Respuestas("Pedro", 'a', false),
+                    new Respuestas("Los dos", 'b', false),
+                    new Respuestas("Tadeo", 'c', true),
+                    new Respuestas("El huevo", 'd', false)
+                }),
+                new Preguntas("2. La cromatina es:\n", new Respuestas[] {
+                    new Respuestas("El componente esencial del nucleolo", 'a', false),
+                    new Respuestas("Cada una de las partes de un cromosoma", 'b', false),
+                    new Respuestas("Fibras de ARN asociadas a proteínas", 'c', false),
+                    new Respuestas("Fibras de ADN empaquetadas con histonas", 'd', true)
+                }),
+                new Preguntas("3. Tanto las células vegetales como las animales contienen:\n", new Respuestas[] {
+                    new Respuestas("Ribosomas, paredes celulares y mitocondrias", 'a', false),
+                    new Respuestas("Aparato de Golgi, paredes celulares y ribosomas", 'b', false),
+                    new Respuestas("Aparato de Golgi, ribosomas y mitocondrias", 'c', true),
+                    new Respuestas("Cloroplastos, membranas celulares y mitocondrias", 'd', false)
+                }),
+                new Preguntas("4. Una característica esencial de la respiración celular es que:\n", new Respuestas[] {
+                    new Respuestas("Siempre requiere oxígeno", 'a', false),
+                    new Respuestas("Genera 2 ATP por molécula de glucosa", 'b', true),
+                    new Respuestas("Sus productos finales son inorgánicos", 'c', true),
+                    new Respuestas("A y C son correctas", 'd', true)
+                }),
+                new Preguntas("5. El reino Fungi y el reino Animal tienen en común las siguientes características:\n", new Respuestas[] {
+                    new Respuestas("Son eucariotas y autótrofos", 'a', false),
+                    new Respuestas("Son eucariotas y heterótrofos", 'b', true),
+                    new Respuestas("Son procariotas y autótrofos", 'c', false),
+                    new Respuestas("Son procariotas y heterótrofos", 'd', false)
+                }),
+
+            };
+
+            for (Preguntas p: preguntas) {
+                p.preguntar();
+            }
+        }
+        return opcion2;
+    }
 }
