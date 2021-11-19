@@ -5,7 +5,7 @@ public class Preguntas {
     private String pregunta;
     private Respuestas[] respuestas;
     Scanner sn = new Scanner(System.in);
-    char respuestaCorrecta = 'a';
+    char respuestaCorrecta = ' ';
     char letra;
 
     public Preguntas(String pregunta, Respuestas[] respuestas) {
@@ -17,7 +17,7 @@ public class Preguntas {
         System.out.println(this.pregunta);
         for (Respuestas opcion: this.respuestas) {
             if (opcion.esCorrecta()) respuestaCorrecta = opcion.getLetra();
-            System.out.print( (opcion.getLetra()) + ") " + opcion.getRespuesta() + "\n");
+            System.out.print((opcion.getLetra()) + ") " + opcion.getRespuesta() + "\n");
         }
         System.out.println("\nDigite su respuesta: ");
         letra = sn.next().toLowerCase().charAt(0);
