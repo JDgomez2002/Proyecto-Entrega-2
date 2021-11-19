@@ -772,9 +772,9 @@ public class Interfaz{
                 }),
                 new Preguntas("4. Una característica esencial de la respiración celular es que:\n", new Respuestas[] {
                     new Respuestas("Siempre requiere oxígeno", 'a', false),
-                    new Respuestas("Genera 2 ATP por molécula de glucosa", 'b', true),
+                    new Respuestas("Genera 2 ATP por molécula de glucosa", 'b', false),
                     new Respuestas("Sus productos finales son inorgánicos", 'c', true),
-                    new Respuestas("A y C son correctas", 'd', true)
+                    new Respuestas("A y C son correctas", 'd', false)
                 }),
                 new Preguntas("5. El reino Fungi y el reino Animal tienen en común las siguientes características:\n", new Respuestas[] {
                     new Respuestas("Son eucariotas y autótrofos", 'a', false),
@@ -792,7 +792,7 @@ public class Interfaz{
         return opcion2;
     }
 
-    public int matemarica(){
+    public int matematica(){
         if(opcion2 == 2){
             Preguntas[] preguntas = {
                 new Preguntas("1. Las mitocondrias son orgánulos celulares cuya función principal es:\n", new Respuestas[] {
@@ -836,7 +836,7 @@ public class Interfaz{
     }
 
     public int fisica(){
-        if(opcion2 == 1){
+        if(opcion2 == 3){
             Preguntas[] preguntas = {
                 new Preguntas("1. Las mitocondrias son orgánulos celulares cuya función principal es:\n", new Respuestas[] {
                     new Respuestas("La Fotosintesis", 'a', false),
@@ -879,7 +879,7 @@ public class Interfaz{
     }
 
     public int lenguaje(){
-        if(opcion2 == 1){
+        if(opcion2 == 4){
             Preguntas[] preguntas = {
                 new Preguntas("1. Pedro le dice a Tadeo si quiere desayunar huevo, ¿quien es el receptor?\n", new Respuestas[] {
                     new Respuestas("Pedro", 'a', false),
@@ -887,29 +887,29 @@ public class Interfaz{
                     new Respuestas("Tadeo", 'c', true),
                     new Respuestas("El huevo", 'd', false)
                 }),
-                new Preguntas("2. La cromatina es:\n", new Respuestas[] {
-                    new Respuestas("El componente esencial del nucleolo", 'a', false),
-                    new Respuestas("Cada una de las partes de un cromosoma", 'b', false),
-                    new Respuestas("Fibras de ARN asociadas a proteínas", 'c', false),
-                    new Respuestas("Fibras de ADN empaquetadas con histonas", 'd', true)
+                new Preguntas("2. Juana va con su madre y le dice que si puede apagar la television. ¿Cual es el canal?\n", new Respuestas[] {
+                    new Respuestas("La television", 'a', false),
+                    new Respuestas("La madre de Juana", 'b', false),
+                    new Respuestas("Juana", 'c', false),
+                    new Respuestas("La voz", 'd', true)
                 }),
-                new Preguntas("3. Tanto las células vegetales como las animales contienen:\n", new Respuestas[] {
-                    new Respuestas("Ribosomas, paredes celulares y mitocondrias", 'a', false),
-                    new Respuestas("Aparato de Golgi, paredes celulares y ribosomas", 'b', false),
-                    new Respuestas("Aparato de Golgi, ribosomas y mitocondrias", 'c', true),
-                    new Respuestas("Cloroplastos, membranas celulares y mitocondrias", 'd', false)
+                new Preguntas("3. ¿Que tipo de palabra segun su acentuacion es <<Cargador>>\n", new Respuestas[] {
+                    new Respuestas("Aguda", 'a', true),
+                    new Respuestas("Grave", 'b', false),
+                    new Respuestas("Esdrujula", 'c', false),
+                    new Respuestas("Sobreesdrujula", 'd', false)
                 }),
-                new Preguntas("4. Una característica esencial de la respiración celular es que:\n", new Respuestas[] {
-                    new Respuestas("Siempre requiere oxígeno", 'a', false),
-                    new Respuestas("Genera 2 ATP por molécula de glucosa", 'b', true),
-                    new Respuestas("Sus productos finales son inorgánicos", 'c', true),
-                    new Respuestas("A y C son correctas", 'd', true)
+                new Preguntas("4. ¿Que tipo de palabra segun su acentuacion es <<Helado>>\n", new Respuestas[] {
+                    new Respuestas("Aguda", 'a', false),
+                    new Respuestas("Grave", 'b', true),
+                    new Respuestas("Esdrujula", 'c', false),
+                    new Respuestas("Sobreesdrujula", 'd', false)
                 }),
-                new Preguntas("5. El reino Fungi y el reino Animal tienen en común las siguientes características:\n", new Respuestas[] {
-                    new Respuestas("Son eucariotas y autótrofos", 'a', false),
-                    new Respuestas("Son eucariotas y heterótrofos", 'b', true),
-                    new Respuestas("Son procariotas y autótrofos", 'c', false),
-                    new Respuestas("Son procariotas y heterótrofos", 'd', false)
+                new Preguntas("5. ¿En que estan relacionadas las barreras fisicas?\n", new Respuestas[] {
+                    new Respuestas("La psicologia", 'a', false),
+                    new Respuestas("Loa muros", 'b', false),
+                    new Respuestas("El entorno en el que emisor y receptor se encuentran", 'c', true),
+                    new Respuestas("Ninguna de las anteriores", 'd', false)
                 }),
 
             };
